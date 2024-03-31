@@ -14,3 +14,5 @@ System Information: Operating systems, web server OSes, location of web servers,
 3. Gather Information from FTP Search Engines
 
 4. Gather Information from IoT Search Engines
+
+5. Gather Information About a Target Website
