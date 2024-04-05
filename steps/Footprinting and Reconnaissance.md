@@ -16,3 +16,11 @@ System Information: Operating systems, web server OSes, location of web servers,
 4. Gather Information from IoT Search Engines
 
 5. Gather Information About a Target Website
+
+6. Gather Information about a Target by Tracing Emails
+
+7. Perform Whois Footprinting
+
+8. Perform DNS Footprinting
+
+9. Perform Network Footprinting
