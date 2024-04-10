@@ -1,3 +1,5 @@
+# Footprinting and Reconnaissance
+
 Organization Information: Employee details, addresses and contact details, partner details, weblinks, web technologies, patents, trademarks, etc.
 
 Network Information: Domains, sub-domains, network blocks, network topologies,trusted routers, firewalls, IP addresses of the reachable systems, the Whois record, DNS records, and other related information
@@ -24,3 +26,8 @@ System Information: Operating systems, web server OSes, location of web servers,
 8. Perform DNS Footprinting
 
 9. Perform Network Footprinting
+
+10. Perform Footprinting using Various Footprinting Tools
+
+--------------------------------------
+
