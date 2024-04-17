@@ -1,0 +1,1 @@
+ unshadow /etc/passwd /etc/shadow > unshadowed.txt

@@ -1,6 +1,12 @@
 find / -user root -perm -4000 -exec ls -ldb {} \;
 
 
+find / -user root -perm /4000 2>/dev/null
+
+find / \( -perm -u+s -or -perm -g+s  \) -type f -exec ls -l {} \; -- suid sqid bitleri aktiv olan fayllar listelenir
+
+find / -user root -perm -4000 -exec ls -ldb {} \; 2>>/dev/null | grep "/bin" -- suid de root yetkisi olanlari gosterir
+
 getcap -r / 2>/dev/null
 
 

