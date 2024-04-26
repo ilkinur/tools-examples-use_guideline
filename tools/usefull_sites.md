@@ -21,7 +21,9 @@ https://github.com/mzet-/linux-exploit-suggester
 https://github.com/itm4n/PrivescCheck.git
 
 medusa
+
 ncrack
+
 pwdump8-exe
 
 https://github.com/internetwache/GitTools
@@ -49,3 +51,11 @@ https://jwt.io/
 https://github.com/streaak/keyhacks
 
 https://github.com/cisagov/log4j-affected-db/blob/develop/software_lists/README.md
+
+https://pentestreports.com/reports/
+
+https://github.com/swisskyrepo/SSRFmap
+
+https://github.com/noraj/ctf-party
+
+https://github.com/taylanbildik/Linux_Dersleri/tree/master
