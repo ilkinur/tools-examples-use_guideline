@@ -7,7 +7,7 @@ var
   v = newSocket()
 
   # Change this
-  v1 = "192.168.1.1"
+  v1 = "10.8.47.26"
   v2 = "8080"
 
   s4 = "Exiting.."
