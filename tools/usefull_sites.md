@@ -59,3 +59,25 @@ https://github.com/swisskyrepo/SSRFmap
 https://github.com/noraj/ctf-party
 
 https://github.com/taylanbildik/Linux_Dersleri/tree/master
+
+analyzing malicious traffic using Brim
+
+setoolkit
+
+beef
+
+https://github.com/Tib3rius/Pentest-Cheatsheets
+
+https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/
+
+https://github.com/XiphosResearch/exploits
+
+https://viewdns.info/iphistory/
+
+https://regexr.com/
+
+https:/app.snyk.io/
+
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md
+
+https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh
