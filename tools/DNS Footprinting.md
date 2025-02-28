@@ -10,6 +10,8 @@
 
 `dnsrecon` - DNS Enumeration and Scanning Tool
 
+`fierce` - DNS  scanner  that  helps locate non-contiguous IP space and hostnames against specified domains.
+
 http://www.kloth.net/services/nslookup.php
 
 DNSdumpster (https://dnsdumpster.com)
