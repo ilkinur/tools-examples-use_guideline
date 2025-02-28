@@ -1,6 +1,14 @@
 # DNS Footprinting
 
-nslookup
+`nslookup` - query Internet name servers interactively
+
+`dnsenum` - multithread script to enumerate information on a domain and to discover non-contiguous IP blocks
+
+`dnsmap` - scan for subdomains using bruteforcing techniques
+
+`dnswalk` - A DNS database debugger
+
+`dnsrecon` - DNS Enumeration and Scanning Tool
 
 http://www.kloth.net/services/nslookup.php
 
