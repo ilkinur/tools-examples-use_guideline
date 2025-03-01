@@ -17,3 +17,17 @@
 `skipfish` - aciq axtarir hedefde
 
 `brutex` - BruteX is a very lean, bash script with a small learning curve and the execution is really straightforward which is quite nice, especially in the age of complicated frameworks.
+
+`ssb` - Secure Shell Bruteforcer — A faster & simpler way to bruteforce SSH server.
+
+`medusa` 
+
+`ncrack`
+
+`pwdump8-exe`
+
+`setoolkit`
+
+`beef`
+
+`Brim` - analyzing malicious traffic
