@@ -28,4 +28,5 @@
 
 `stegcracker` - StegCracker is steganography brute-force utility to uncover hidden data inside files.
 
+`Brutal-FX` - A bruteforce attack Tool for brute forcing social media accounts such as Facebook, Gmail, Hotmail, Twitter.
 
