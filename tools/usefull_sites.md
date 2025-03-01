@@ -1,5 +1,7 @@
 # Usefull Sites
 
+https://github.com/TheSpeedX/PROXY-List - Free proxy list.
+
 https://hashkiller.io/listmanager
 
 https://gtfobins.github.io/
@@ -19,12 +21,6 @@ https://github.com/unode/firefox_decrypt
 https://github.com/mzet-/linux-exploit-suggester
 
 https://github.com/itm4n/PrivescCheck.git
-
-medusa
-
-ncrack
-
-pwdump8-exe
 
 https://github.com/internetwache/GitTools
 
@@ -59,12 +55,6 @@ https://github.com/swisskyrepo/SSRFmap
 https://github.com/noraj/ctf-party
 
 https://github.com/taylanbildik/Linux_Dersleri/tree/master
-
-analyzing malicious traffic using Brim
-
-setoolkit
-
-beef
 
 https://github.com/Tib3rius/Pentest-Cheatsheets
 
