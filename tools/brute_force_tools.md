@@ -1,9 +1,14 @@
 # Brute Force Tools
 
-hydra
+`hydra`
 
-patator
 
-hashcat
+`patator`
 
-Burp Suite
+
+`hashcat`
+
+
+`Burp Suite`
+
+`stegcracker` - StegCracker is steganography brute-force utility to uncover hidden data inside files.
