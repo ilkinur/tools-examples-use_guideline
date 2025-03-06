@@ -33,3 +33,18 @@ Send one package to target and target will be only response `ICMP Echo` (if don'
 #### -sU
 
 Send UDP package to target. If the target response with `UDP` packages so the ports are open. If the target response `ICMP Port Unreachable` or don't response any package so the port will be `open-filtered`
+
+#### -sO
+
+Send IP package to target. If the target response with `RST` packages so the ports are open. If the target  don't response any package so the port will be `open-filtered`
+
+
+### Anonim scanning
+
+We need extra tools like `proxychains` and `tor`.
+Start tor service  `service tor start`.  We can add extra proxy list to  `/etc/proxychains.conf` for speedly scan but there are default proxies if you don't have any proxy lists. Then scan anonymously like `proxychains nmap 192.168.181.0/24`  
+
+`-D` <fakeip> - scan over fake IP.  
+`-S` <spoofIP> - send packs like spoof ip and don't get any response because targent response to spoof ip  
+`-mtu <number>` - to seerate packages for bypass firewall package limit
+
