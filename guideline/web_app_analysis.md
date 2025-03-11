@@ -185,3 +185,29 @@ Bu üsulla, serverin həmişə tam resursu qaytarmasını təmin edə və onun �
 - **Cross-Site Scripting (XSS)**: Server cavabında istifadəçi girişləri düzgün sanitasiya edilmədən göstərilərsə, zərərli skriptlər işlədilə bilər.
 - **Buffer Overflow**: Əgər tətbiqin server tərəfində istifadə etdiyi dəyişənlər sabit uzunluqlu yaddaş bölgələrində saxlanırsa, uzun giriş dəyərləri yaddaş sızmalarına və ya kodun icra edilməsinə səbəb ola bilər.
 
+---
+
+## Müştəri Tərəfində Giriş Doğrulamasını Yoxlamaq
+
+### 1. JavaScript ilə Giriş Doğrulamasını Aşkar Etmək
+- Müştəri tərəfində form göndərilməzdən əvvəl giriş doğrulamasını yerinə yetirən **JavaScript kodlarını** araşdırın.
+- **Form elementlərindəki `onchange`, `onsubmit`, `onblur` hadisələri**, həmçinin səhifədə yüklənən **JavaScript faylları** bu doğrulamanı ehtiva edə bilər.
+
+### 2. Serverə Etibarsız Məlumat Göndərmək
+- **Brauzer konsolundan və ya DevTools vasitəsilə form doğrulama kodunu deaktiv edin.**
+- **Məlumatı birbaşa dəyişdirərək serverə etibarsız məlumat göndərin.**
+    - Form üzərindəki HTML kodunu dəyişdirərək.
+    - Burp Suite və ya Postman kimi vasitələrlə HTTP sorğularını düzəldərək.
+
+### 3. Server Tərəfi Yoxlamasını Yoxlamaq
+- **Server tərəfdə də eyni yoxlamaların mövcud olub-olmadığını araşdırın.**
+- Əgər server bu doğrulamanı təkrarlamırsa, bu zəiflikdən aşağıdakı yollarla istifadə oluna bilər:
+    - **SQL Injection**: Xüsusi hazırlanmış giriş dəyərləri ilə SQL sorğularını manipulyasiya etmək.
+    - **Cross-Site Scripting (XSS)**: Brauzerdə icra olunacaq zərərli skriptlər daxil etmək.
+    - **Böyük həcmli məlumatlarla sistemin stabil fəaliyyətini pozmaq.**
+
+### 4. Çoxsaylı Sahələrin Yoxlanılması
+- **Hər giriş sahəsini ayrıca etibarsız məlumatla test edin.**
+- Əgər bir neçə sahəyə eyni vaxtda etibarsız məlumat göndərsəniz, server ilk səhv sahədə dayanıb digər sahələrin yoxlanmasını istisna edə bilər.
+- **Bütün mümkün kod yollarının yoxlanmasını təmin etmək üçün hər sahəni ayrı-ayrılıqda test edin.**
+
