@@ -83,3 +83,38 @@
 - Tətbiqə təqdim edilən bütün parametrlərin adlarını və dəyərlərini onların dəstəklədiyi funksionallıq kontekstində nəzərdən keçirin.
 - Proqramçı kimi düşünməyə çalışın və müşahidə edilən davranışın arxasında hansı server tərəfli mexanizmlər və texnologiyaların dayandığını təsəvvür etməyə çalışın.
 
+## Tətbiqin Daxili Strukturunu və Funksionallığını Anlamaq
+
+### Mövcud İpuçlarının Aşkarlanması
+- Tətbiq daxilində daxili struktur və digər sahələrin funksionallığı barədə ipucları ehtiva edə biləcək yerləri müəyyən etməyə çalışın.
+- Kodun, səhifələrin və ya URL-lərin içində tətbiqin daxili işləmə prinsiplərinə dair məlumat verən elementləri araşdırın.
+
+### Təhlükəsizlik və Potensial Zəifliklər
+- Bu mərhələdə konkret nəticələr çıxarmaq mümkün olmaya bilər, lakin müəyyən edilən halların sonrakı mərhələlərdə potensial zəifliklərin istismarında faydalı ola biləcəyini nəzərə alın.
+- Tapılan məlumatlar daha sonra tətbiqə qarşı mümkün hücum strategiyalarının hazırlanması üçün istifadə oluna bilər.
+
+### Məlumat Mənbələrinin Təhlili
+- Server tərəfindən qaytarılan xətalar, debug məlumatları və ya xüsusi URL-lər vasitəsilə əldə edilən məlumatları nəzərdən keçirin.
+- Açıq qalan admin panelləri, konfiqurasiya faylları və ya istifadəçi icazələrinin zəif tənzimləndiyi sahələri müəyyənləşdirin.
+
+## Gizli Məlumatların Aşkarlanması və Təhlili
+
+### Məlumatların Mübadiləsində İstifadə Edilən Gizli Elementlərin Tapılması
+- Tətbiq daxilində gizli form sahələrinin, kukilərin və URL parametrlərinin istifadə olunduğu bütün halları müəyyən edin.
+- Müxtəlif səhifələrdə və sorğularda bu elementlərin necə istifadə olunduğunu analiz edin.
+
+### Elementlərin Funksional Məqsədinin Təhlili
+- Hər bir gizli elementin tətbiqin məntiqində oynadığı rolu anlamağa çalışın.
+- Kontekstə əsaslanaraq, elementlərin adlarına və onların istifadə olunduğu yerlərə görə məqsədlərini müəyyən etməyə çalışın.
+
+### Dəyərlərin Dəyişdirilməsi və Təhlükəsizlik Təhlili
+- Müvafiq olaraq, bu elementlərin dəyərlərini dəyişdirin və tətbiqin davranışını müşahidə edin.
+- Tətbiqin təqdim edilən dəyərləri necə emal etdiyini və istənilən dəyəri qəbul edib-etmədiyini yoxlayın.
+- Dəyərlərin dəyişdirilməsi nəticəsində tətbiqin hər hansı bir zəifliyə qarşı həssas olub-olmadığını müəyyən edin.
+
+### Potensial Təhlükələrin Qiymətləndirilməsi
+- Tətbiqin arbitrar dəyərləri necə emal etdiyini araşdırın.
+- Məlumat dəyişdirildikdə sistemin gözlənilməz davranışlar sərgiləməsini izləyin.
+- Tapılan zəifliklərin potensial istismar yollarını müəyyənləşdirin və onların tətbiq üçün yaratdığı riskləri qiymətləndirin.
+
+
