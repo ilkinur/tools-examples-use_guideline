@@ -33,6 +33,8 @@
 - **Proksi/spider aləti** tərəfindən yaradılan **sayt xəritəsi** hədəf tətbiq haqqında **dəyərli məlumatlar** təqdim edir.  
 - Bu məlumatlar, sonradan tətbiqin **hücum səthini müəyyənləşdirmək** üçün istifadə edilə bilər.
 
+---
+
 ## Veb Tətbiqinin Təhlükəsizlik Analizi
 
 ### Giriş Nöqtələrinin Təhlili
@@ -83,6 +85,8 @@
 - Tətbiqə təqdim edilən bütün parametrlərin adlarını və dəyərlərini onların dəstəklədiyi funksionallıq kontekstində nəzərdən keçirin.
 - Proqramçı kimi düşünməyə çalışın və müşahidə edilən davranışın arxasında hansı server tərəfli mexanizmlər və texnologiyaların dayandığını təsəvvür etməyə çalışın.
 
+---
+
 ## Tətbiqin Daxili Strukturunu və Funksionallığını Anlamaq
 
 ### Mövcud İpuçlarının Aşkarlanması
@@ -96,6 +100,8 @@
 ### Məlumat Mənbələrinin Təhlili
 - Server tərəfindən qaytarılan xətalar, debug məlumatları və ya xüsusi URL-lər vasitəsilə əldə edilən məlumatları nəzərdən keçirin.
 - Açıq qalan admin panelləri, konfiqurasiya faylları və ya istifadəçi icazələrinin zəif tənzimləndiyi sahələri müəyyənləşdirin.
+
+---
 
 ## Gizli Məlumatların Aşkarlanması və Təhlili
 
@@ -117,4 +123,65 @@
 - Məlumat dəyişdirildikdə sistemin gözlənilməz davranışlar sərgiləməsini izləyin.
 - Tapılan zəifliklərin potensial istismar yollarını müəyyənləşdirin və onların tətbiq üçün yaratdığı riskləri qiymətləndirin.
 
+---
+
+## Server Cavablarını Tutmaq və Dəyişdirmək
+
+### 304 Not Modified Cavabı
+Server cavablarını ələ keçirmək və dəyişdirmək istədikdə, proxy alətinizdə belə bir cavab görə bilərsiniz:
+
+```
+HTTP/1.1 304 Not Modified
+Date: Wed, 21 Feb 2007 22:40:20 GMT
+Etag: “6c7-5fcc0900”
+Expires: Thu, 22 Feb 2007 00:40:20 GMT
+Cache-Control: max-age=7200
+```
+
+Bu cavab, brauzerin artıq tələb etdiyi resursun keşlənmiş bir nüsxəsinə sahib olduğu üçün qaytarılır.
+
+### Keşlənmiş Resursların Sorğulanması
+Brauzer keşdə olan bir resursu yenidən tələb etdikdə, adətən iki əlavə HTTP başlığı (header) göndərir:
+
+```
+GET /scripts/validate.js HTTP/1.1
+Host: wahh-app.com
+If-Modified-Since: Sat, 17 Feb 2007 19:48:20 GMT
+If-None-Match: “6c7-5fcc0900”
+```
+
+Bu başlıqlar serverə aşağıdakı məlumatları ötürür:
+- **If-Modified-Since**: Brauzerin sonuncu dəfə bu resursu yenilədiyi tarixi bildirir.
+- **If-None-Match**: Serverin əvvəlki cavabında göndərdiyi **Etag** dəyərini ehtiva edir.
+
+**Etag** server tərəfindən hər keşlənə bilən resursa təyin edilən unikal seriya nömrəsidir və resurs hər dəyişdirildikdə yenilənir.
+
+### Serverin Cavab Davranışı
+- Əgər serverdə **If-Modified-Since** başlığında göstərilən tarixdən daha yeni bir versiya varsa **və ya** mövcud **Etag** dəyəri **If-None-Match** başlığında olan dəyərlə uyğun gəlmirsə, server yeni resursu qaytarır.
+- Əks halda, server **304 Not Modified** cavabını göndərir və brauzer mövcud keşlənmiş resursu istifadə etməyə davam edir.
+
+### Server Cavablarını Əl ilə Tutmaq və Dəyişdirmək
+Əgər brauzerin keşlənmiş resursu istifadə etməsini istəmirsinizsə və bu resursu ələ keçirmək və dəyişdirmək lazımdırsa, aşağıdakı addımları ata bilərsiniz:
+1. Sorğunu tutun və **If-Modified-Since** və **If-None-Match** başlıqlarını silin.
+2. Bu zaman server, brauzerin keşlənmiş versiyasını yox sayaraq, resursun tam versiyasını qaytaracaq.
+3. Burp Proxy kimi alətlərdə brauzerin göndərdiyi bütün sorğulardan bu başlıqları avtomatik silmək üçün seçimlər mövcuddur.
+
+Bu üsulla, serverin həmişə tam resursu qaytarmasını təmin edə və onun üzərində dəyişikliklər edə bilərsiniz.
+
+---
+
+## Maksimum Uzunluq Məhdudiyyətlərini Araşdırmaq
+
+### Maksimum Uzunluğu olan Form Elementləri
+- Form elementlərində **maxlength** atributunu axtarın.
+- Maksimum uzunluqdan daha uzun məlumat göndərin, lakin digər aspektlərdə düzgün formatlanmış olsun (məsələn, tətbiq ədəd gözləyirsə, uzun lakin rəqəmsal dəyər daxil edin).
+
+### Serverin Reaksiyasını Yoxlamaq
+- Əgər tətbiq uzun məlumatı qəbul edirsə, bu, müştəri tərəfindəki yoxlamanın serverdə təkrarlanmadığını göstərə bilər.
+- Serverin bu uzun məlumatı necə emal etdiyini analiz edin.
+
+### Potensial Hücum İmkanları
+- **SQL Injection**: Əgər giriş dəyərləri düzgün təmizlənmirsə, əlavə SQL ifadələri yerinə yetirilə bilər.
+- **Cross-Site Scripting (XSS)**: Server cavabında istifadəçi girişləri düzgün sanitasiya edilmədən göstərilərsə, zərərli skriptlər işlədilə bilər.
+- **Buffer Overflow**: Əgər tətbiqin server tərəfində istifadə etdiyi dəyişənlər sabit uzunluqlu yaddaş bölgələrində saxlanırsa, uzun giriş dəyərləri yaddaş sızmalarına və ya kodun icra edilməsinə səbəb ola bilər.
 
