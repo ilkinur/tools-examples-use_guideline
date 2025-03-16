@@ -93,7 +93,7 @@ HTTP başlıqlarını dəyişmək üçün istifadə olunur.
 GET / HTTP/1.1\r\nSet-Cookie: admin=true
 ```
 
-## 9. Email Header Injection
+## 9. Email Header Injection (SMTP injection)
 E-poçt başlıqlarını manipulyasiya edərək phishing hücumları etmək.
 ```txt
 To: victim@example.com\r\nCC: attacker@example.com
