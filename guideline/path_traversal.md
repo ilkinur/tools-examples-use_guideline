@@ -45,4 +45,22 @@ Bütün girişlərinizdəki hər bir nöqtə və əyrixəti kodlaşdırdığın�
 ....\\ 
 ```
 
-Bu metodlar əksər hallarda filtr sistemlərini yan keçmək üçün effektiv ola bilər. Test edərkən mümkün olan bütün variantları yoxlamaq vacibdir.
+## Path Traversal İstifadə Edərək Məlumat Sızdırma 
+
+Path traversal zəifliyindən istifadə edərək serverdən maraqlı faylları oxumaq və hücumları daha dəqiq tənzimləmək mümkündür. Bu fayllara daxildir:
+
+- **Şifrə faylları** – Əməliyyat sistemi və tətbiqin giriş məlumatları.
+- **Server və tətbiq konfiqurasiya faylları** – Digər zəiflikləri aşkarlamaq və ya yeni hücumlar üçün məlumat toplamaq.
+- **Daxil edilmiş fayllar (include files)** – Məlumat bazası giriş məlumatlarını ehtiva edə bilər.
+- **Məlumat bazası və XML faylları** – Məlumat bazasına birbaşa giriş əldə etmək üçün istifadə edilə bilər.
+- **Server tərəfindən icra edilən səhifələrin mənbə kodu** – Kodu araşdıraraq zəifliklər tapmaq.
+- **Tətbiq loq faylları** – İstifadəçi adları, sessiya identifikatorları və digər kritik məlumatlar.
+
+## Path Traversal vasitəsilə yazma icazəsi əldə etmək 
+
+Əgər path traversal zəifliyi serverdə yazma icazəsi verirsə, əsas məqsəd bunu istifadə edərək sistemdə əmr icrası əldə etməkdir. Bunu aşağıdakı yollarla etmək olar:
+
+- **İstifadəçilərin başlanğıc qovluqlarında skriptlər yaratmaq** – Avtomatik işlədilmə üçün.
+- **Sistem fayllarını dəyişdirmək** – Məsələn, `in.ftpd` faylını dəyişərək istifadəçi qoşulanda istədiyiniz əmri icra etdirmək.
+- **Web kataloqda icra icazəsi olan skriptlər yazmaq** – Brauzer vasitəsilə bu skriptləri çağıraraq serverdə kod icra etmək.
+
