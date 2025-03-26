@@ -1,5 +1,7 @@
 # Usefull Sites
 
+https://haveibeenpwned.com - Check if your email address is in a data breach
+
 https://github.com/TheSpeedX/PROXY-List - Free proxy list.
 
 https://hashkiller.io/listmanager
