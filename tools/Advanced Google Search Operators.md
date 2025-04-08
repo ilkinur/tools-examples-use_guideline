@@ -9,6 +9,7 @@
 |\||	Same as OR:	|jobs \| gates|
 |AND|	Search for results related to X and Y.| 	jobs AND gates|
 |-|	Search for results that don’t mention a word or phrase.|	jobs -apple|
+|+|	Search for results that mention a word or phrase.|	jobs +apple|
 |*|	Wildcard matching any word or phrase.|	steve * apple| 
 |( )	|Group multiple searches.	|(ipad OR iphone) apple|
 |define:|	Search for the definition of a word or phrase.| 	define:entrepreneur|
