@@ -64,3 +64,12 @@ proxychains -q ssh user@target_ip
 ```
 Bu isə tunel üzərindən `target_ip`-yə SSH ilə qoşulmanı təmin edir.
 
+---------------------------------------------  
+
+```bash
+chisel client YOUR_SERVER_IP:8080 R:2222:localhost:22
+```
+
+YOUR_SERVER_IP — VPS-in IP ünvanı.
+
+`R:2222:localhost:22` — serverdə (VPS-də) 2222 portu açılır və ora gələn trafik clientdəki `localhost:22` portuna yönlənir.
