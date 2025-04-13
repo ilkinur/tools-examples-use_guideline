@@ -1,5 +1,7 @@
 # Usefull Sites
 
+`www.crt.sh` - find subdomens over sertificate
+
 https://haveibeenpwned.com - Check if your email address is in a data breach
 
 https://github.com/TheSpeedX/PROXY-List - Free proxy list.
@@ -73,3 +75,4 @@ https:/app.snyk.io/
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md
 
 https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh
+
