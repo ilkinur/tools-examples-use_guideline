@@ -36,7 +36,7 @@
 
 `sublist3r` - subdomens finder.
 
-
 `subfinder` - subdomens finder
 
+`dnsrecon` - analysis dns records and check dns zone transfer control
 
