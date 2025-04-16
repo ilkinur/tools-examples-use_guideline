@@ -43,3 +43,9 @@
 `raccoon` - check site many aspect (using other tools)
 
 `photon` - check site many aspect (using other tools)
+
+`theHarvester` - OSINT tool (using other tools and services)
+
+`infoga` - email searcher
+
+msfconsole > `gather/search_email_collector` - email searcher
