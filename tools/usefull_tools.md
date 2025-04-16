@@ -40,3 +40,6 @@
 
 `dnsrecon` - analysis dns records and check dns zone transfer control
 
+`raccoon` - check site many aspect (using other tools)
+
+`photon` - check site many aspect (using other tools)
