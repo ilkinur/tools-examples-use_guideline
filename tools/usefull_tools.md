@@ -49,3 +49,13 @@
 `infoga` - email searcher
 
 msfconsole > `gather/search_email_collector` - email searcher
+
+`social-analyzer` - OSINT tool
+
+`profil3r` - OSINT tool
+
+`sherlock` - OSINT tool
+
+`osrframework` - OSINT tool
+
+`maltego` - OSINT tool
