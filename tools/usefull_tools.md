@@ -12,6 +12,8 @@
 
 `infoga` - email searcher
 
+`greenbone` - vulnerability analysis (like nesus)
+
 `maltego` - OSINT tool
 
 `medusa` 
