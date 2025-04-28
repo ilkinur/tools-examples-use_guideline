@@ -10,6 +10,8 @@
 
 `builtwith.com` - search  development of web site technologies
 
+`https://gchq.github.io/CyberChef/` - CyberChef
+
 https://hashkiller.io/listmanager
 
 https://gtfobins.github.io/
