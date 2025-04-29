@@ -22,6 +22,8 @@
 
 `netdiscover` - send arp package and explore network. Work on layer 2.
 
+`nikto` -  web server scanner
+
 `osrframework` - OSINT tool
 
 `photon` - check site many aspect (using other tools)
@@ -42,11 +44,15 @@
 
 `social-analyzer` - OSINT tool
 
+`sparta` - vulnerability analysis
+
 `ssb` - Secure Shell Bruteforcer — A faster & simpler way to bruteforce SSH server.
 
 `subfinder` - subdomens finder
 
 `sublist3r` - subdomens finder.
+
+`swaks` - Swaks is a featureful, flexible, scriptable, transaction-oriented SMTP test tool
 
 `theHarvester` - OSINT tool (using other tools and services)
 
