@@ -12,6 +12,8 @@
 
 `infoga` - email searcher
 
+`javac` - java code compiler
+
 `greenbone` - vulnerability analysis (like nesus)
 
 `maltego` - OSINT tool
