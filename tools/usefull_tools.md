@@ -10,11 +10,17 @@
 
 `dnsrecon` - analysis dns records and check dns zone transfer control
 
+`ffuz` - A fast web fuzzer written in Go.
+
+`gobuster` - is a tool used to brute-force: URIs (directories and files) in web sites. DNS subdomains (with wildcard support). Virtual Host names on target web servers.
+
+`greenbone` - vulnerability analysis (like nesus)
+
 `infoga` - email searcher
 
 `javac` - java code compiler
 
-`greenbone` - vulnerability analysis (like nesus)
+`jwt_tool` = (`https://github.com/ticarpi/jwt_tool`) - a toolkit for validating, forging, scanning and tampering JWTs (JSON Web Tokens).
 
 `maltego` - OSINT tool
 
@@ -66,9 +72,17 @@
 
 `WAES`- 10 dan cox tool istifade edib aciq ve kesfiyyat edir ve rapor yazir
 
+`whatweb` - Next generation web scanner
+
+`wfuzz` - fuzzer tool
+
+`wpscan` - WordPress Security Scanner
+
 `xsser` - Cross Site “Scripter” (aka XSSer) is an automatic framework to detect, exploit and report XSS vulnerabilities in web-based applications.
 
 `xsspwn` - xss aciqlari axdarir hedefde
+
+`ysoserial` = `https://github.com/frohoff/ysoserial` - A proof-of-concept tool for generating payloads that exploit unsafe Java object deserialization.
 
 `zaproxy` - aciq axtaran proqramdi
 
