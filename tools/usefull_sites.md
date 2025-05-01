@@ -12,6 +12,18 @@
 
 `https://gchq.github.io/CyberChef/` - CyberChef
 
+`https://jwt.io/` - JSON Web Token (JWT) Debugger
+
+`https://github.com/ayoubfathi/leaky-paths` - A collection of special paths linked to major web frameworks and infrastructure projects, known juicy APIs, misconfigurations.. etc.
+
+`https://github.com/swisskyrepo/PayloadsAllTheThings` - A list of useful payloads and bypasses for Web Application Security. 
+
+`https://github.com/synacktiv/php_filter_chain_generator` - A CLI to generate PHP filters chain, get your RCE without uploading a file if you control entirely the parameter passed to a require or an include in PHP!
+
+`https://github.com/ambionics/phpggc` - PHPGGC is a library of unserialize() payloads along with a tool to generate them, from command line or programmatically
+
+`https://github.com/aancw/spose` - Detecting open port behind squid proxy for CTF and pentest purpose using http proxy method.
+
 https://hashkiller.io/listmanager
 
 https://gtfobins.github.io/
