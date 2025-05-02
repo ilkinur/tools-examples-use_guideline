@@ -6,11 +6,21 @@
 
 `beef`
 
+`binwalk` -  identify, and optionally extract, files and data that have been embedded inside of other files.
+
 `brutex` - BruteX is a very lean, bash script with a small learning curve and the execution is really straightforward which is quite nice, especially in the age of complicated frameworks.
+
+`cutter` - a free and open-source reverse engineering platform
 
 `dnsrecon` - analysis dns records and check dns zone transfer control
 
+`Evil-WinRM` - Windows sistemlərinə qarşı Remote Management (WinRM) üzərindən istismar (exploitation) və idarəetmə (post-exploitation) məqsədilə istifadə olunan komanda xətti əsaslı (CLI) alətdir.
+
 `ffuz` - A fast web fuzzer written in Go.
+
+`gef` - a set of commands for x86/64, ARM, MIPS, PowerPC and SPARC to assist exploit developers and reverse-engineers when using old school GDB.
+
+`ghidra` - a software reverse engineering (SRE) framework.
 
 `gobuster` - is a tool used to brute-force: URIs (directories and files) in web sites. DNS subdomains (with wildcard support). Virtual Host names on target web servers.
 
@@ -21,6 +31,10 @@
 `hydra` - Brute-force attack to many services.
 
 `infoga` - email searcher
+
+`ImageTragick` - ImageMagick-in faylların içindəki kodları icra etməyə imkan verən dizayn səhvindən istifadə edərək kod icrası üçün mənbə yaradır.
+
+`imhex` - A Hex Editor for Reverse Engineers
 
 `javac` - java code compiler
 
@@ -37,6 +51,8 @@
 `maltego` - OSINT tool
 
 `medusa` 
+
+`metasploit` - ən məşhur və geniş istifadə olunan istismar (exploitation) və təhlükəsizlik testləri platformalarından biridir. Bu alət vasitəsilə sistem zəiflikləri aşkarlanır, istismar olunur, və penetration test həyata keçirilir.
 
 `mimikatz` - a tool make somes experiments with Windows security.
 
@@ -58,7 +74,11 @@
 
 `pwdump8-exe`
 
+`pwndbg` - a GDB and LLDB plug-in that makes debugging suck less, with a focus on features needed by low-level software developers, hardware hackers, reverse-engineers and exploit developers.
+
 `raccoon` - check site many aspect (using other tools)
+
+`radare2` - a complete rewrite of radare. It provides a set of libraries, tools and plugins to ease reverse engineering tasks.
 
 `rapidscan` - 80 nov tarama edir ve aciqlar infolar verir
 
