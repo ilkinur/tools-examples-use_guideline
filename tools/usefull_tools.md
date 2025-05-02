@@ -16,15 +16,29 @@
 
 `greenbone` - vulnerability analysis (like nesus)
 
+`hashcat` - World's fastest password cracker
+
+`hydra` - Brute-force attack to many services.
+
 `infoga` - email searcher
 
 `javac` - java code compiler
 
+`john` - a fast password cracker
+
 `jwt_tool` = (`https://github.com/ticarpi/jwt_tool`) - a toolkit for validating, forging, scanning and tampering JWTs (JSON Web Tokens).
+
+`keepass` - A python script to help red teamers discover KeePass instances and extract secrets.
+
+`kerbrute` - A tool to quickly bruteforce and enumerate valid Active Directory accounts through Kerberos Pre-Authentication
+
+`LaZagne` - an open source application used to retrieve lots of passwords stored on a local computer.
 
 `maltego` - OSINT tool
 
 `medusa` 
+
+`mimikatz` - a tool make somes experiments with Windows security.
 
 `ncrack`
 
@@ -34,15 +48,21 @@
 
 `osrframework` - OSINT tool
 
+`patator` - Patator was written out of frustration from using Hydra, Medusa, Ncrack, Metasploit modules and Nmap NSE scripts for password guessing attacks.
+
 `photon` - check site many aspect (using other tools)
 
 `profil3r` - OSINT tool
+
+`pypykatz` - Mimikatz implementation in pure Python.
 
 `pwdump8-exe`
 
 `raccoon` - check site many aspect (using other tools)
 
 `rapidscan` - 80 nov tarama edir ve aciqlar infolar verir
+
+`RsaCtfTool` - This tool is an utility designed to decrypt data from weak public keys and attempt to recover the corresponding private key
 
 `setoolkit`
 
