@@ -8,11 +8,19 @@
 
 `binwalk` -  identify, and optionally extract, files and data that have been embedded inside of other files.
 
+`BloodHound` - əsasən Active Directory (AD) mühitlərində istifadə olunan, hücumçular və təhlükəsizlik mütəxəssisləri tərəfindən istifadə edilən açıq mənbəli bir analiz və görsəlləşdirmə alətidir.
+
 `brutex` - BruteX is a very lean, bash script with a small learning curve and the execution is really straightforward which is quite nice, especially in the age of complicated frameworks.
+
+`Certify` - Certify is a C# tool to enumerate and abuse misconfigurations in Active Directory Certificate Services (AD CS).
+
+`certipy` - Certipy is an offensive tool for enumerating and abusing Active Directory Certificate Services (AD CS).
 
 `cutter` - a free and open-source reverse engineering platform
 
 `dnsrecon` - analysis dns records and check dns zone transfer control
+
+`enum4linux-ng` - a tool for enumerating information from Windows and Samba systems
 
 `Evil-WinRM` - Windows sistemlərinə qarşı Remote Management (WinRM) üzərindən istismar (exploitation) və idarəetmə (post-exploitation) məqsədilə istifadə olunan komanda xətti əsaslı (CLI) alətdir.
 
@@ -22,6 +30,8 @@
 
 `ghidra` - a software reverse engineering (SRE) framework.
 
+`Ghostpack-CompiledBinaries` - Compiled binaries for GhostPack
+
 `gobuster` - is a tool used to brute-force: URIs (directories and files) in web sites. DNS subdomains (with wildcard support). Virtual Host names on target web servers.
 
 `greenbone` - vulnerability analysis (like nesus)
@@ -30,11 +40,13 @@
 
 `hydra` - Brute-force attack to many services.
 
-`infoga` - email searcher
-
 `ImageTragick` - ImageMagick-in faylların içindəki kodları icra etməyə imkan verən dizayn səhvindən istifadə edərək kod icrası üçün mənbə yaradır.
 
 `imhex` - A Hex Editor for Reverse Engineers
+
+`impacket` - Impacket is focused on providing low-level programmatic access to the packets and for some protocols (e.g. SMB1-3 and MSRPC) the protocol implementation itself.
+
+`infoga` - email searcher
 
 `javac` - java code compiler
 
@@ -47,6 +59,14 @@
 `kerbrute` - A tool to quickly bruteforce and enumerate valid Active Directory accounts through Kerberos Pre-Authentication
 
 `LaZagne` - an open source application used to retrieve lots of passwords stored on a local computer.
+
+`LinEnum` - Linux əməliyyat sistemlərində privilege escalation (imtiyazların yüksəldilməsi) imkanlarını aşkar etmək üçün istifadə olunan bash skriptidir.
+
+`linux-exploit-suggester` - LES tool is designed to assist in detecting security deficiencies for a given Linux kernel/Linux-based machine
+
+`LOLBAS` -  Windows əməliyyat sistemində hücumçuların zərərli proqram istifadə etmədən sadəcə sistemdə əvvəldən mövcud olan proqramlar (binary-lər və skriptlər) ilə hücum həyata keçirməsini izah və sənədləşdirən bir təhlükəsizlik layihəsidir.
+
+`lsassy` - Windows sistemlərində çalışan lsass.exe (Local Security Authority Subsystem Service) prosesindən şifrə hash-larını və ya açıq mətn parolları çıxartmaq üçün istifadə olunan forensik və offensive security (yəni hücum məqsədli) Python əsaslı bir alətdir.
 
 `maltego` - OSINT tool
 
