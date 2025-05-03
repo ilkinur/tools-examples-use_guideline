@@ -24,6 +24,8 @@
 
 `https://github.com/aancw/spose` - Detecting open port behind squid proxy for CTF and pentest purpose using http proxy method.
 
+`https://gtfobins.github.io/` - GTFOBins is a curated list of Unix binaries that can be used to bypass local security restrictions in misconfigured systems
+
 https://hashkiller.io/listmanager
 
 https://gtfobins.github.io/
