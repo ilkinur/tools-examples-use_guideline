@@ -82,3 +82,51 @@
 | `irb`                                | Metasploit scriptleri oluşturup çalıştırabileceğimiz ortamı açar.       |
 | `run <script>`                       | İlgili script’in kullanılmasını sağlar.                                 |
 | `load <eklenti>`                     | Metasploit eklentisini yükler. (`load -l` ile eklentiler listelenir.)   |
+
+
+# Meterpreter - Incognito Modulunun İstifadəsi
+
+`incognito` Meterpreter modulu, əsasən Windows sistemlərində istifadə olunan və istifadəçi tokenləri üzərində manipulyasiya etməyə imkan verən güclü bir post-exploitation vasitəsidir.
+
+---
+
+## 🔍 Nədir `load incognito`?
+
+`load incognito` komandası ilə Meterpreter sessiyasına `incognito` eklentisi əlavə olunur. Bu eklenti ilə sistemdəki digər istifadəçilərin identifikasiyasını (tokenlərini) istifadə edərək onların səlahiyyətləri ilə əmrlər yerinə yetirmək mümkündür.
+
+---
+
+## 🛠️ Əsas İmkanları
+
+### ✅ 1. Token İmpersonation (Təqlid)
+Sistemdə aktiv olan istifadəçi tokenlərini təqlid edərək onların hüquqları ilə işləməyə imkan verir.
+
+### ✅ 2. Token Enumeration
+Mövcud sessiyada olan bütün tokenləri siyahı şəklində göstərir.
+
+### ✅ 3. Yeni Token İstifadəsi
+Əgər sistemdə yüksək hüquqlu (məsələn, `DOMAIN\\admin`) bir istifadəçi sessiyası varsa, onu təqlid edərək yüksək hüquqlar qazanmaq mümkündür.
+
+---
+
+## 🧪 İstifadə Nümunələri
+
+### 🔹 Modulu yükləmək:
+```bash
+meterpreter > load incognito
+```
+
+## Mövcud tokenləri görmək:
+```bash
+meterpreter > list_tokens -u
+```
+
+## Token təqlidi (impersonation):
+```bash
+meterpreter > impersonate_token "DOMAIN\\admin"
+```
+
+## Öz hüquqlarına qayıtmaq:
+```bash
+meterpreter > rev2self
+```
