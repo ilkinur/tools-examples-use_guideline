@@ -28,6 +28,8 @@
 
 `https://github.com/SecWiki/windows-kernel-exploits` - windows kernel exploits lists
 
+`https://github.com/abatchy17/WindowsExploits` - Mostly precompiled Windows exploits
+
 https://hashkiller.io/listmanager
 
 https://gtfobins.github.io/
