@@ -26,6 +26,8 @@
 
 `https://gtfobins.github.io/` - GTFOBins is a curated list of Unix binaries that can be used to bypass local security restrictions in misconfigured systems
 
+`https://github.com/SecWiki/windows-kernel-exploits` - windows kernel exploits lists
+
 https://hashkiller.io/listmanager
 
 https://gtfobins.github.io/
