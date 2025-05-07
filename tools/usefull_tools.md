@@ -16,6 +16,12 @@
 
 `certipy` - Certipy is an offensive tool for enumerating and abusing Active Directory Certificate Services (AD CS).
 
+`cewl` - Custom Word List generator
+
+`cook` - An overpower wordlist generator, splitter, merger, finder, saver, create words permutation and combinations, apply different encoding/decoding and everything you need.
+
+`cupp` - Common User Passwords Profiler
+
 `cutter` - a free and open-source reverse engineering platform
 
 `dnsrecon` - analysis dns records and check dns zone transfer control
@@ -37,6 +43,8 @@
 `greenbone` - vulnerability analysis (like nesus)
 
 `hashcat` - World's fastest password cracker
+
+`hoaxshell` - Windows reverse shell payload generator and handler that abuses the http(s) protocol to establish a beacon-like reverse shell
 
 `hydra` - Brute-force attack to many services.
 
@@ -103,6 +111,8 @@
 `rapidscan` - 80 nov tarama edir ve aciqlar infolar verir
 
 `RsaCtfTool` - This tool is an utility designed to decrypt data from weak public keys and attempt to recover the corresponding private key
+
+`seclists` -  It's a collection of multiple types of lists used during security assessments, collected in one place.
 
 `setoolkit`
 
