@@ -30,6 +30,10 @@
 
 `https://github.com/abatchy17/WindowsExploits` - Mostly precompiled Windows exploits
 
+`https://github.com/TheWover/donut` - Donut is a position-independent code that enables in-memory execution of VBScript, JScript, EXE, DLL files and dotNET assemblies.
+
+`https://github.com/R3nt0n/bopscrk?tab=readme-ov-file` - Generate smart and powerful wordlists for targeted attacks
+
 https://hashkiller.io/listmanager
 
 https://gtfobins.github.io/
