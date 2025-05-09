@@ -130,3 +130,12 @@ meterpreter > impersonate_token "DOMAIN\\admin"
 ```bash
 meterpreter > rev2self
 ```
+
+# Unquoted Service Path
+
+Windowsda bu adda bir açıq var hansıki bu açıqdan istifadə edərək proqram çalışdıra və ya imtiyaz qaldıra bilərik. Əgər çalışdırılan proqramların olduğu yer adında boşluq varsa və o dırnaqcıq içində yazılmayıbsa onda o boşluqa qədər olan yerin adında payload yaradıb ora qoyarsaq ilk o işə salınacaq.
+Bunu msfconsole-da `post/windows/gather/enum_services` post modulu ilə baxa bilərik.
+
+
+
+
