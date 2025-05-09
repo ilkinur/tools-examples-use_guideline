@@ -136,6 +136,11 @@ meterpreter > rev2self
 Windowsda bu adda bir açıq var hansıki bu açıqdan istifadə edərək proqram çalışdıra və ya imtiyaz qaldıra bilərik. Əgər çalışdırılan proqramların olduğu yer adında boşluq varsa və o dırnaqcıq içində yazılmayıbsa onda o boşluqa qədər olan yerin adında payload yaradıb ora qoyarsaq ilk o işə salınacaq.
 Bunu msfconsole-da `post/windows/gather/enum_services` post modulu ilə baxa bilərik.
 
+# Scriptlər
+
+`post/windows/manage/enable_rdp` - windowsda rdp açır.
+`post/windows/manage/persistence_exe` - windowsda verilen exeni hədəf maşına yükləyir açılışda çalışdırır və registery-də əlavə edir.
+
 
 
 
