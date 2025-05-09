@@ -138,7 +138,7 @@ Bunu msfconsole-da `post/windows/gather/enum_services` post modulu ilə baxa bil
 
 # Scriptlər
 
-`post/windows/manage/enable_rdp` - windowsda rdp açır.
+`post/windows/manage/enable_rdp` - windowsda rdp açır.  
 `post/windows/manage/persistence_exe` - windowsda verilen exeni hədəf maşına yükləyir açılışda çalışdırır və registery-də əlavə edir.
 
 
