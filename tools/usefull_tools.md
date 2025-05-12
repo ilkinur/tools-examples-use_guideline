@@ -110,6 +110,8 @@
 
 `rapidscan` - 80 nov tarama edir ve aciqlar infolar verir
 
+`responder` - Ətrafa sorulan istəklərdə özünü soruşulan server kimi göstərərək qurbanın hash-larını (ntlm) oğurlayır. 
+
 `RsaCtfTool` - This tool is an utility designed to decrypt data from weak public keys and attempt to recover the corresponding private key
 
 `seclists` -  It's a collection of multiple types of lists used during security assessments, collected in one place.
