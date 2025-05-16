@@ -18,7 +18,7 @@
 
 `cewl` - Custom Word List generator
 
-`crackmapexec` - Active Domain mühitində SMB-yə password spraying etmək üçündür (msfconsole-da da oxşar tool var).
+`crackmapexec` - Active Domain mühitində SMB-yə password spraying etmək üçündür (msfconsole-da da oxşar tool var). Əlavə olaraqda NTLM (not NTLMv2) hash ilə parolu bilmədəndə login olmağı yoxlamaq olar.
 
 `cook` - An overpower wordlist generator, splitter, merger, finder, saver, create words permutation and combinations, apply different encoding/decoding and everything you need.
 
