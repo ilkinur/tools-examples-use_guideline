@@ -142,6 +142,8 @@
 
 `uniscan` - hedefde aciqlar axdarir
 
+`veil` - AV (Antivirus) və ya EDR (Endpoint Detection and Response) sistemlərindən yayınan zərərli kodlar (payloads) yaratmaq olan bir alətdir.
+
 `vooki` - kesfiyyat ve aciqlari axdaran tooldu
 
 `wapiti` - hedefe muxtelif nov requestler ataraq aciqlar axdarir
