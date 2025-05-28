@@ -34,6 +34,8 @@
 
 `https://github.com/R3nt0n/bopscrk?tab=readme-ov-file` - Generate smart and powerful wordlists for targeted attacks
 
+`https://github.com/samratashok/nishang` - a framework and collection of scripts and payloads which enables usage of PowerShell for offensive security, penetration testing and red teaming.
+
 https://hashkiller.io/listmanager
 
 https://gtfobins.github.io/
