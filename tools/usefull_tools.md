@@ -32,6 +32,8 @@
 
 `Evil-WinRM` - Windows sistemlərinə qarşı Remote Management (WinRM) üzərindən istismar (exploitation) və idarəetmə (post-exploitation) məqsədilə istifadə olunan komanda xətti əsaslı (CLI) alətdir.
 
+`fcrackzip` - ZIP arxiv fayllarının şifrələrini qırmaq (brute-force və ya dictionary hücumları ilə) üçün istifadə olunan açıq mənbə kodlu bir alətdir.
+
 `ffuz` - A fast web fuzzer written in Go.
 
 `gef` - a set of commands for x86/64, ARM, MIPS, PowerPC and SPARC to assist exploit developers and reverse-engineers when using old school GDB.
