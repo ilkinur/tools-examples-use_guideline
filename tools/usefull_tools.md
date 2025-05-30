@@ -1,4 +1,10 @@
 # Tools
+`aircrack-ng` - Wifi penetrasyon test tətbiqi:
+  - `airmon-ng` - monitor mod  
+  - `airodump-ng` - packet sniffer  
+  - `aireplay-ng` - packet injector  
+  - `airdecap-ng` - decryptor  
+  - `airbase-ng` - işləmci hədəfli hücumlar:Saxta access point yaratma kimi  
 
 `arp-scan` -  send arp package and explore network like `netdiscover`.
 
