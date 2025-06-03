@@ -20,3 +20,4 @@ find / -type f -executable 2> /dev/null - on UNIX-based systems to discover all 
 
 find / -perm -u=s -type f 2>/dev/null - looks for files where the user permission has the SUID bit set (-u=s)
 
+`find / -perm -u=s -type f 2>/dev/null`
