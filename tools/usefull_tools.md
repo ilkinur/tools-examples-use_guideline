@@ -42,6 +42,8 @@
 
 `ffuz` - A fast web fuzzer written in Go.
 
+`flask-unsign` - a powerful tool used to decode, verify, sign, and even brute-force Flask session cookies.
+
 `gef` - a set of commands for x86/64, ARM, MIPS, PowerPC and SPARC to assist exploit developers and reverse-engineers when using old school GDB.
 
 `ghidra` - a software reverse engineering (SRE) framework.
