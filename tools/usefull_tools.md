@@ -152,6 +152,8 @@
 
 `uniscan` - hedefde aciqlar axdarir
 
+`vega` -  a free and open source web security scanner and web security testing platform to test the security of web applications. Vega can help you find and validate SQL Injection, Cross-Site Scripting (XSS), inadvertently disclosed sensitive information, and other vulnerabilities.
+
 `veil` - AV (Antivirus) və ya EDR (Endpoint Detection and Response) sistemlərindən yayınan zərərli kodlar (payloads) yaratmaq olan bir alətdir.
 
 `vooki` - kesfiyyat ve aciqlari axdaran tooldu
@@ -165,6 +167,8 @@
 `wfuzz` - fuzzer tool
 
 `wpscan` - WordPress Security Scanner
+
+`w3af` - Uniscan, Perl'de yazılan website güvenlik açığı tarayıcısıdır. Website üzerinde verilen komutlarla zafiyet taraması yapar.
 
 `xsser` - Cross Site “Scripter” (aka XSSer) is an automatic framework to detect, exploit and report XSS vulnerabilities in web-based applications.
 
