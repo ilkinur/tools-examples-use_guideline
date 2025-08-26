@@ -47,3 +47,39 @@ ssh -L 127.0.0.1:80:<LHOST>:80 <RHOST>
 ssh -L 80:localhost:80 <RHOST>
 ```
 **İzah:** Lokal maşının 80 portu, `RHOST` üzərindəki `localhost:80` ünvanına tunellənir.
+
+---
+
+```bash
+ssh -D 9050 user@ip
+```
+Bu SOCKS Proxy (Dynamic port forwarding) açır.
+
+-D 9050 → sənin öz kompüterində 9050 portunu dinləyir və onu qarşı tərəfə tunelləyir.
+
+Bu halda lokal maşınında proxy server kimi işləyir. Məsələn, browser-i 127.0.0.1:9050 SOCKS proxy-ə qoşsan, bütün trafik əvvəlcə SSH ilə remote serverə gedəcək, ordan da internetə çıxacaq.
+
+Yəni sanki VPN kimi işləyir, amma yalnız SOCKS səviyyəsində.
+
+---
+
+```bash
+ssh user@ip -R 9050 -N
+```
+Bu isə Remote port forwarding edir.
+
+-R 9050 → qarşı tərəfdə (remote serverdə) 9050 portunu dinləyir, və o porta gələn trafik sənin lokal maşına yönləndirilir.
+
+-N → heç bir komanda shell açılmasın, sadəcə tunel yaradılsın.
+
+Yəni fərq nədir?
+
+-D SOCKS proxy lokalda açır.
+
+-R isə portu remote serverdə açır, sənin lokalına forward edir.
+
+🔑 Sadə müqayisə
+
+ssh -D → mənim kompüterimdə proxy aç, bütün trafik remote serverdən çıxsın (VPN effekti).
+
+ssh -R → remote serverdə port aç, ora gələnləri mənim kompüterimə yönləndir (reverse tunnel, yəni tərs istiqamətdə)
