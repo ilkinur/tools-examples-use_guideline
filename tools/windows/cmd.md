@@ -10,6 +10,9 @@ copy filename to_where => copy file
 move filename to_where => move file
 shutdown => shutdown (restart, make time to shutdown  pc. see /? or /h params all other params)
 pathping 1.1.1.1 => like tracerout
+sc query /any_params => check all services with params
+net start (stop/restart) service_name => start service
+reg add (delete) reg_address any_params => registry command
 ```
 ---
 
