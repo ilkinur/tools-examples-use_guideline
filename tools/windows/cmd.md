@@ -1,9 +1,41 @@
 # CMD
 
 ```cmd
-tasklist => list tasks
+systeminfo => Displays detailed OS configuration, hardware,patches (hotfixes)
+whoami (/groups, /priv, /fqdn, /all) => Displays current user context
+hostname => Displays the computer's hostname. hostname
+ver / winver => Displays Windows version.
+getmac => Displays MAC address(es).
+bcdedit => Manages Boot Configuration Data.
+driverquery => Displays installed device drivers.
+msinfo32 => Opens System Information GUI (comprehensivehardware/software info).
+path => Displays or sets the command searchpath.
+wmic => Windows Management Instrumentation Command-line
+powercfg => Manages power settings.
+fsutil => File system utility.
+set => Displays, sets, or removes environment variables.
+msconfig => Opens System Configuration utility (boot options, services, startup).
+ipconfig => Displays IP configuration.
+netstat => Displays network connections, listening ports, statistics.
+tracert => Traces the route (hops) to a destination.
+nslookup => Queries DNS servers.
+arp => Displays and modifies the Address Resolution Protocol (ARP) cache(IP-to-MAC mapping).
+netsh => (Network Shell): Powerful network configurationtool.
+route => Displays and modifies the local IP routingtable.
+tasklist => Lists running processes.
 taskkill -pid (/pid - same with other) <PID> => kill any task
-tree => show directory with altdirectories
+schtasks => Schedules commands and programs(Task Scheduler).
+find => Searches for a text string in files (basic).
+findstr => Searches for strings in files (more powerful, supports regex).
+sort => Sorts input (e.g., file contents) alphabetically
+comp / fc => Compares contents of files.
+tree => Displays directory structure graphically.
+attrib => Displays or changes file attributes.
+cipher => Displays or alters file encryption (EFS).
+compact => Displays or alters file compression (NTFS compression).
+icacls => Displays or modifies Access Control Lists (Permissions).
+runas => Runs a program as a different user.
+query process / query user /query session => Shows Remote Desktop Session Host information.
 mkdir => make directory
 rmdir => remove directory
 copy filename to_where => copy file
