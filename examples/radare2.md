@@ -45,6 +45,10 @@ Debugger komutlarına `d?` komutu ile ulaşabilirsiniz.
 `dso` - fonksiyonların içine girmeden bir defa ilerletir.  
 `dso 10` - programı fonksiyon içine girmeden 10 instruction daha çalıştırır.  
 `ood` - programımızı debug modunda restart eder.  
+`dr` - Breakpoint-də REGİSTER-lərə baxmaq.  
+`ds` - Addım-addım icra (single-step). Call-ları içəri girmədən keçmək istəyirsənsə: `dso` . Bir neçə addım birdən: `ds 5`  
+
+
 
 ### Memory
 `dm` - bize memory map’i gösterir.  
