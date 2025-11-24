@@ -47,6 +47,19 @@ Debugger komutlarına `d?` komutu ile ulaşabilirsiniz.
 `ood` - programımızı debug modunda restart eder.  
 `dr` - Breakpoint-də REGİSTER-lərə baxmaq.  
 `ds` - Addım-addım icra (single-step). Call-ları içəri girmədən keçmək istəyirsənsə: `dso` . Bir neçə addım birdən: `ds 5`  
+`afvd` -	Funksiyanın lokal dəyişənlərini decompilation formasında göstərir  
+`afv`	- Funksiyanın lokal dəyişənlərini normal formada göstərir  
+`afvs` -	Stack dəyişənlərini göstərir  
+`afvR` -	Register dəyişənlərini göstərir  
+`afvn` -	Bir dəyişənin adını dəyişmək  
+`pf z @rdi(or address)` -	C-string pointer oxuyur  
+`pf s @rdi(or address)` -	Fixed-size string oxuyur (NULL olmasa da oxuyur)  
+`pf i @rdi(or address)` -	Integer oxuyur  
+`pf x @rdi(or address)` -	Hex olaraq oxuyur  
+`pf b @rdi(or address)` -	Byte  
+`pf w @rdi(or address)` -	Word (2 bytes)  
+`pf q @rdi(or address)` -	Quadword (8 bytes)  
+
 
 
 
@@ -63,6 +76,7 @@ Debugger komutlarına `d?` komutu ile ulaşabilirsiniz.
 
 ### Binary Patching
 `r2 -w dosya.exe` - ilk -w parametri ile baslatmaq lazimdi.  
+`wx <hex_bytes>` - Hazırkı offset-ə hex baytları yazır, deyisir.  
 Programımızı patchlemek için `vv` komutu sekmeli görünüm moduna alıyoruz.  
 Aktif olarak bulunduğumuz satırın komutunu değiştirmek için büyük ‘A’ tuşuna basıyoruz. Ve istediğimiz assembly kodunu yazıp Enter’a basıyoruz.  
 
@@ -73,12 +87,27 @@ Aktif olarak bulunduğumuz satırın komutunu değiştirmek için büyük ‘A�
 `pdd` - decombile like mix  
 
 ## Görsel Modu Kullanma
-Farklı varyasyonları bulunmaktadır (V). Fakat bizim kullanacağımız ve en işlevli varyasyonu olan vv modunu kullanacağız. 
-`VV` komutunu girererek konsol ekranı üzerinden görsel arayüze ulaşabilirsiniz. Görsel modun da kendi içinde farklı modları bulunmaktadır. `P` tuşuna basarak farklı modlara geçiş yapabilirsiniz. Ayrıca Mouse’u kullanabilirsiniz. Menülere Mouse ile tıklayabilir ve ok tuşları, enter ile seçiminizi yapabilirsiniz. Görsel modda bir çok özellik bulunmaktadır.  
+Farklı varyasyonları bulunmaktadır (`V`, `V!`). Fakat bizim kullanacağımız ve en işlevli varyasyonu olan `vv` modunu kullanacağız. 
+`VV` komutunu girererek konsol ekranı üzerinden görsel arayüze ulaşabilirsiniz. Görsel modun da kendi içinde farklı modları bulunmaktadır.   
+`P` tuşuna basarak farklı modlara geçiş yapabilirsiniz. Ayrıca Mouse’u kullanabilirsiniz. Menülere Mouse ile tıklayabilir ve ok tuşları, enter ile seçiminizi yapabilirsiniz. Tab tusu ile paneller arasinda gezirik. Görsel modda bir çok özellik bulunmaktadır.  
 `k` ve `j` tuşlarıyla da aşağı yukarı şekilde kodların içinde gezinebilirsiniz. Enter ile de odaklandığınız sekmeyi tam ekran yapabilirsiniz. Ayrıca `vv` komutu ile sekmeli görünüme geçiş yapabilirsiniz. `:` komutu ile görsel modda iken Radare2 komutlarını kullanabilirsiniz. Örneğin : s main şeklinde kullanımı mevcuttur.  
 `;` komutu ile bulunduğunuz satıra yorum ekleyebilir veya var olan yorumu silebilirsiniz. `;` bu komut ile yorum ekleyebilirsiniz. `; -` bu komut ile yorumu silebilirsiniz.  
 `+` ve `–` tuşlarına basarak zoom in veya zoom out yapabilirsiniz. Bu aynı zamanda IDA’daki graph view özelliğini kazandırmaktadır.  
+`w` -  
+`Ctrl+w` → split panel açmaq  
+`Ctrl+w s` → horizontal split (yuxarı-aşağı)  
+`Ctrl+w v` → vertical split (sol-sağ)  
+Panel arasında keçid: `Ctrl+w` → sonra `h/j/k/l` və ya `Tab`  
+`Ctrl+w q` → cari paneli bağlayır  
+`:` → komandaları yazmaq üçün prompt açır.  
 `q` tuşu ile de Graph Mode’dan çıkış yapıp konsol moduna geri dönebilirsiniz.  
+Vizual mod - `V`  
+Panel mod	- `p`  
+Panel menyusu -	`P`  
+Decompiler panel - `pD`  
+Disassembly panel	- `pd`  
+Graph -	`pg`  
+Hexdump -	`px`   
 
 
 
