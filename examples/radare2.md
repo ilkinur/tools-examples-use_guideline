@@ -66,6 +66,11 @@ Debugger komutlarına `d?` komutu ile ulaşabilirsiniz.
 Programımızı patchlemek için `vv` komutu sekmeli görünüm moduna alıyoruz.  
 Aktif olarak bulunduğumuz satırın komutunu değiştirmek için büyük ‘A’ tuşuna basıyoruz. Ve istediğimiz assembly kodunu yazıp Enter’a basıyoruz.  
 
+### Disassembly
+`r2pm update`  
+`r2pm install`  
+`pdg` - decompile like ghidra  
+`pdd` - decombile like mix  
 
 ## Görsel Modu Kullanma
 Farklı varyasyonları bulunmaktadır (V). Fakat bizim kullanacağımız ve en işlevli varyasyonu olan vv modunu kullanacağız. 
