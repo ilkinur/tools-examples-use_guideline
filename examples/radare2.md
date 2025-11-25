@@ -90,7 +90,8 @@ Aktif olarak bulunduğumuz satırın komutunu değiştirmek için büyük ‘A�
 Farklı varyasyonları bulunmaktadır (`V`, `V!`). Fakat bizim kullanacağımız ve en işlevli varyasyonu olan `vv` modunu kullanacağız. 
 `VV` komutunu girererek konsol ekranı üzerinden görsel arayüze ulaşabilirsiniz. Görsel modun da kendi içinde farklı modları bulunmaktadır.   
 `P` tuşuna basarak farklı modlara geçiş yapabilirsiniz. Ayrıca Mouse’u kullanabilirsiniz. Menülere Mouse ile tıklayabilir ve ok tuşları, enter ile seçiminizi yapabilirsiniz. Tab tusu ile paneller arasinda gezirik. Görsel modda bir çok özellik bulunmaktadır.  
-`k` ve `j` tuşlarıyla da aşağı yukarı şekilde kodların içinde gezinebilirsiniz. Enter ile de odaklandığınız sekmeyi tam ekran yapabilirsiniz. Ayrıca `vv` komutu ile sekmeli görünüme geçiş yapabilirsiniz. `:` komutu ile görsel modda iken Radare2 komutlarını kullanabilirsiniz. Örneğin : s main şeklinde kullanımı mevcuttur.  
+`k` ve `j` tuşlarıyla da aşağı yukarı şekilde kodların içinde gezinebilirsiniz. Enter ile de odaklandığınız sekmeyi tam ekran yapabilirsiniz. Ayrıca `vv` komutu ile sekmeli görünüme geçiş yapabilirsiniz.  
+`:` komutu ile görsel modda iken Radare2 komutlarını kullanabilirsiniz. Örneğin : s main şeklinde kullanımı mevcuttur.  
 `;` komutu ile bulunduğunuz satıra yorum ekleyebilir veya var olan yorumu silebilirsiniz. `;` bu komut ile yorum ekleyebilirsiniz. `; -` bu komut ile yorumu silebilirsiniz.  
 `+` ve `–` tuşlarına basarak zoom in veya zoom out yapabilirsiniz. Bu aynı zamanda IDA’daki graph view özelliğini kazandırmaktadır.  
 `w` -  
@@ -100,7 +101,13 @@ Farklı varyasyonları bulunmaktadır (`V`, `V!`). Fakat bizim kullanacağımız
 Panel arasında keçid: `Ctrl+w` → sonra `h/j/k/l` və ya `Tab`  
 `Ctrl+w q` → cari paneli bağlayır  
 `:` → komandaları yazmaq üçün prompt açır.  
-`q` tuşu ile de Graph Mode’dan çıkış yapıp konsol moduna geri dönebilirsiniz.  
+`q` - tuşu ile de Graph Mode’dan çıkış yapıp konsol moduna geri dönebilirsiniz.  
+`s` -	Step into 
+`S` -	Step over  
+`o` -	Step out  
+`c` -	Continue  
+`b` -	Breakpoint əlavə et  
+`B` -	Breakpoint sil  
 Vizual mod - `V`  
 Panel mod	- `p`  
 Panel menyusu -	`P`  
