@@ -77,6 +77,7 @@ Debugger komutlarına `d?` komutu ile ulaşabilirsiniz.
 ### Binary Patching
 `r2 -w dosya.exe` - ilk -w parametri ile baslatmaq lazimdi.  
 `wx <hex_bytes>` - Hazırkı offset-ə hex baytları yazır, deyisir.  
+`wa jmp 0x080486a6` - Hazırkı offset-ə emri yaziriq ozu  hex baytlarina ccevirib yazır, deyisir. 
 Programımızı patchlemek için `vv` komutu sekmeli görünüm moduna alıyoruz.  
 Aktif olarak bulunduğumuz satırın komutunu değiştirmek için büyük ‘A’ tuşuna basıyoruz. Ve istediğimiz assembly kodunu yazıp Enter’a basıyoruz.  
 
