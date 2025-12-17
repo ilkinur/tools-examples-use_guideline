@@ -124,6 +124,8 @@
 
 `responder` - Ətrafa sorulan istəklərdə özünü soruşulan server kimi göstərərək qurbanın hash-larını (ntlm) oğurlayır. 
 
+`Rubeus` (Windows only) - A powerful Windows-based tool designed explicitly for Kerberos-related security testing and enumeration. Rubeus automatically identifies vulnerable accounts and retrieves encrypted AS-REP hashes  
+
 `RsaCtfTool` - This tool is an utility designed to decrypt data from weak public keys and attempt to recover the corresponding private key
 
 `seclists` -  It's a collection of multiple types of lists used during security assessments, collected in one place.
