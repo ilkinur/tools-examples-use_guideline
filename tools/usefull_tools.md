@@ -32,6 +32,8 @@
 
 `cutter` - a free and open-source reverse engineering platform
 
+`dd and dc3dd` - These command-line utilities create exact bit-by-bit copies of hard drives. While dd is the foundational tool, dc3dd offers additional features such as progress indicators and error summaries, making it more suitable for forensic tasks.
+
 `dnsrecon` - analysis dns records and check dns zone transfer control
 
 `enum4linux-ng` - a tool for enumerating information from Windows and Samba systems
@@ -43,6 +45,8 @@
 `ffuz` - A fast web fuzzer written in Go.
 
 `flask-unsign` - a powerful tool used to decode, verify, sign, and even brute-force Flask session cookies.
+
+`FTK Imager` - This forensic imaging tool offers a comprehensive approach to disk imaging. It supports various media types, such as hard drives, CDs, DVDs, and USB drives. Some of its functionalities allow data previewing and provide multiple output formats.
 
 `gef` - a set of commands for x86/64, ARM, MIPS, PowerPC and SPARC to assist exploit developers and reverse-engineers when using old school GDB.
 
@@ -159,6 +163,8 @@
 `veil` - AV (Antivirus) və ya EDR (Endpoint Detection and Response) sistemlərindən yayınan zərərli kodlar (payloads) yaratmaq olan bir alətdir.
 
 `vooki` - kesfiyyat ve aciqlari axdaran tooldu
+
+`volatility` - This robust framework is essential for extracting digital artefacts from volatile memory (RAM) dumps. Its usage is perfect for analysing memory dumps to uncover running processes, open network connections, and other volatile data that might be lost in a cold system analysis.
 
 `wapiti` - hedefe muxtelif nov requestler ataraq aciqlar axdarir
 
