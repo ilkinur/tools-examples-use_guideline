@@ -8,6 +8,8 @@
 
 `arp-scan` -  send arp package and explore network like `netdiscover`.
 
+`Autopsy` - Disk Image Analysis Tool. Autopsy provides a graphical interface for TSK functions, making it more accessible to non-technical users. It offers keyword searches, timeline analysis, and file carving features.
+
 `Brim` - analyzing malicious traffic
 
 `beef`
