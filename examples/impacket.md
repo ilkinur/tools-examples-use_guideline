@@ -108,4 +108,7 @@ Kerberos Service Ticket (TGS) almaq və həmin bileti başqa istifadəçi kimi (
 `impacket-getST -spn <delegation user/domen> -impersonate Administrator "<domen>/<username>:<password>" -dc-ip <ip>`
 
 
+### impacket-lookupsid
 
+Windows / Active Directory sistemində SID-ləri (Security Identifier) user və group adlarına çevirmək və eyni zamanda mövcud user/group-ları enum etmək üçün istifadə olunan Impacket alətidir.  
+`impacket-lookupsid <domain>/<user>:<password>@<ip>` ( check with guest user without password)
