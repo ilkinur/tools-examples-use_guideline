@@ -68,6 +68,10 @@ Kod | Mənası
 150	| Data transfer başlayır
 226	| Transfer tamamlandı
 
+Şübhəli fayl adları:
+```
+ftp.request.arg contains ".php"
+```
 
 -------
 
