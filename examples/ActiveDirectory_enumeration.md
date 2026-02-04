@@ -125,5 +125,15 @@ This command shows all groups (including nested) that the user (username) is a m
 
 ---
 
+`Get-LocalGroupMember -Group Administrators` - Members of the following local groups  
+`Get-NetLocalGroupMember -ComputerName ws01 -GroupName Administrators` - lokal Administrators qrupunun üzvlərini  
+`Get-NetLoggedon -ComputerName ws04` - uzaq kompüterdə hazırda və ya yaxın zamanda login olmuş user-ləri göstərmək üçün istifadə olunur  
+`PsLoggedOn64.exe \\ws04` - ws04 kompüterində kimlərin login olduğunu göstərmək üçündür (bu registeridə HKEY_USERS-ə baxaraq bu qərarı verir)  
+`Get-NetSession -ComputerName ws04` - Bu komanda uzaq kompüterdə aktiv SMB (network) session-ları göstərir. (PowerView command [alternativ: `net session \\ws04`, `Get-SmbSession -CimSession ws04`)  
+Üstdəki komanda zəif icazəli userlər tərəfindən çalışdırılanda birçox halda nəticə vermir bununda səbəbi registery-də o icazənin söndürülməsidir:  
+`HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\DefaultSecurity\SrvsvcSessionInfo`  
+
+
+
 
 
