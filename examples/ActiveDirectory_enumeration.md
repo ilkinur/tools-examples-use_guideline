@@ -1,5 +1,20 @@
 # Active Directory enumeration
 
+## Tools
+  - crackmapexec (netexec) - a post-exploitation and enumeration framework for Active Directory environments.
+  - BloodHound - an Active Directory relationship analysis tool used for offensive security.
+  - PingCastle -  an Active Directory security auditing and risk assessment tool.
+  - Impacket - a Python-based toolkit for Active Directory and Windows network attacks
+  - Kerbrute - a Kerberos-focused Active Directory enumeration tool
+
+Typical Tool Chain Placement
+1. Kerbrute – user enumeration
+2. NetExec – authentication and enumeration
+3. BloodHound – attack path discovery
+4. Impacket – exploitation and lateral movemen
+
+
+
 ### Rubeus (Windows only)
 
 A powerful Windows-based tool designed explicitly for Kerberos-related security testing and enumeration. Rubeus automatically identifies vulnerable accounts and retrieves encrypted AS-REP hashes.  
