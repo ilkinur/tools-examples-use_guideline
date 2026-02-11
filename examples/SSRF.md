@@ -2,4 +2,4 @@
 
 
 
-![test](examples/SSRF_url_schema_support.png)
+![Schema](./SSRF_url_schema_support.png)
