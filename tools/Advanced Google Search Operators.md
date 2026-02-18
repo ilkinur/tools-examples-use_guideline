@@ -41,3 +41,10 @@
 |loc:|	Find results from a given area.	|loc:”san francisco” apple|
 |location:|	Find news from a certain location in Google News.|	location:”san francisco” apple|
 |daterange:|	Search for results from a particular date range.|	daterange:11278-13278|
+
+---------------------------
+
+
+`www.google.com/advanced_search` - Advanced search  
+`www.google.com/advanced_image_search` - Advanced Image Search  
+`www.google.com/imghp` - Reverse Image Search  
