@@ -1,8 +1,8 @@
-wfuzz -c -z file,/usr/share/wordlists/dirb/big.txt  --sc  200 http://$IP:5000/api/v2/resources/books?FUZZ=.bash_history
+`wfuzz -c -z file,/usr/share/wordlists/dirb/big.txt  --sc  200 http://$IP:5000/api/v2/resources/books?FUZZ=.bash_history`
 
-wfuzz -c -z file,/usr/share/wordlists/dirb/common.txt --hw 462,53  -H "Host: FUZZ.vulnnet.thm" http://vulnnet.thm/
+`wfuzz -c -z file,/usr/share/wordlists/dirb/common.txt --hw 462,53  -H "Host: FUZZ.vulnnet.thm" http://vulnnet.thm/`
 
-wfuzz -c -z file,usernames.txt -z file,passwords.txt --hs "Please enter the correct credentials" -u http://MACHINE_IP/login.php -d "username=FUZZ&password=FUZ2Z"
+`wfuzz -c -z file,usernames.txt -z file,passwords.txt --hs "Please enter the correct credentials" -u http://MACHINE_IP/login.php -d "username=FUZZ&password=FUZ2Z"`
 In the command above:
 
     -z file,usernames.txt loads the usernames list.
@@ -12,10 +12,10 @@ In the command above:
     -d "username=FUZZ&password=FUZ2Z" provides the POST data format where FUZZ will be replaced by usernames and FUZ2Z by passwords.
 
 
-wfuzz -c -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt --hw 15 http://10.10.66.89:8081/FUZZ
+`wfuzz -c -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt --hw 15 http://10.10.66.89:8081/FUZZ`
 
-wfuzz -c -w /usr/share/wordlists/SecLists/Fuzzing/LFI/LFI-gracefulsecurity-linux.txt -u http://dev.team.thm/script.php?page=FUZZ --hw=0
+`wfuzz -c -w /usr/share/wordlists/SecLists/Fuzzing/LFI/LFI-gracefulsecurity-linux.txt -u http://dev.team.thm/script.php?page=FUZZ --hw=0`
 
-ffuf -u http://10.10.53.34/FUZZ -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words-lowercase.txt -e .php,.txt
+`ffuf -u http://10.10.53.34/FUZZ -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words-lowercase.txt -e .php,.txt`
 
-wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -u "http://cmess.thm" -H "Host: FUZZ.cmess.thm" --hw 290
+`wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -u "http://cmess.thm" -H "Host: FUZZ.cmess.thm" --hw 290`
