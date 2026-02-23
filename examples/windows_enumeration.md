@@ -50,6 +50,20 @@
 • download jaws-enum-result.txt
 ```
 
+### Processes & Services
+
+```cmd
+• meterpreter
+• ps
+• pgrep explorer.exe
+• migrate PID
+• shell
+• net start
+• wmic service list brief
+• tasklist /svc
+• schtasks /query /fo LIST
+```
+
 ### Enumeration with BloodHound
 
 `bloodhound-python -u user -p password -ns 192.168.1.48 -d domen.local -c All`
