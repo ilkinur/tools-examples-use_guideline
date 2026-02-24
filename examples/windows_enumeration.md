@@ -1,5 +1,17 @@
 # Windows Enumeration
 
+### System Information
+
+```cmd
+• meterpreter
+• getuid
+• sysinfo
+• shell
+• systeminfo
+• wmic qfe get Caption,Description,HotFixID,InstalledOn
+```
+
+
 ### Users & Groups
 
 ```cmd
