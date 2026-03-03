@@ -1,5 +1,10 @@
 # Windows Privileges Escalation
 
+### Windows Kernel Exploits
+
+• post/multi/recon/local_exploit_suggester  
+• run any module from the result to elevate privileges
+
 ### PrivescCheck
 ```cmd
 • get this script https://github.com/itm4n/PrivescCheck
