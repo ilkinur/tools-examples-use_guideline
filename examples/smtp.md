@@ -12,6 +12,6 @@ metasploit - `auxiliary/scanner/smtp/smtp_enum`
 
 `python3 -m aiosmtpd -n -l <ip>:25` - we start a simple SMTP server to receive incoming emails.
 
-	
+`swaks --to user@example.com --from sender@example.com --server mail.example.com` - test mail	
 
 username@[<ip>](@domen.thm - after `(` - comment all text and we send mail to our server (see more info https://portswigger.net/research/splitting-the-email-atom)
