@@ -6,12 +6,24 @@
   - PingCastle -  an Active Directory security auditing and risk assessment tool.
   - Impacket - a Python-based toolkit for Active Directory and Windows network attacks
   - Kerbrute - a Kerberos-focused Active Directory enumeration tool
+  - responder - Listener packages
 
 Typical Tool Chain Placement
 1. Kerbrute – user enumeration
 2. NetExec – authentication and enumeration
 3. BloodHound – attack path discovery
 4. Impacket – exploitation and lateral movemen
+
+
+### Kerbrute
+
+`kerbrute userenum -d DOMAIN.LOCAL --dc 172.16.5.5 usernames_list.txt -o valid_ad_users`
+
+
+### Responder
+
+`responder -I eth0 -w -r -f (-wrf)`  
+`hashcat -m 5600 hash_ntlmv2 /usr/share/wordlists/rockyou.txt` - cracking ntlm hash
 
 
 
