@@ -23,6 +23,11 @@ Typical Tool Chain Placement
 
 `kerbrute userenum -d DOMAIN.LOCAL --dc 172.16.5.5 usernames_list.txt -o valid_ad_users`
 
+### rpcclient
+
+`rpcclient -U "" 10.211.11.10 -N`  
+and enumerate users with: `enumdomusers`  
+`getdompwinfo` - target's password policy. (`crackmapexec smb 10.211.11.10 --pass-pol`)
 
 ### Responder
 
