@@ -1,6 +1,21 @@
 # BufferOverflow
 
 
+### Tipləri
+  - Stack-Based Buffer Overflow
+  - Heap-Based Buffer Overflow
+  - Format String Attack
+  - Integer Overflow
+
+#### Stac-Based
+
+ESP: Stack pointer. Stack veri yapısının LIFO (Last In Firs Out) son giren yani ilk çıkacak elemanı gösterir.Bir nevi üst sınır.  
+EBP: Stacktaki ilk giren elemanı işaret eder. Bir nevi altsınır.  
+EIP: Instruction pointer olarak geçmektedir.CPU’nun an itibariyle code segment’i içerisindeki hangi instruction’i çalıştıracağını gösterir.  
+
+EIP - ə istədiyimiz funksiyanın return adresini yazdıqda bu funksiyadan ora sıçrayacaqş Bunun üçündə ESP sayını və EBP (8 bayt) -i doldururuq və EIP -yə dönəcəyimiz (return) adresi verəcəyik oradakı funksiyanı işlədirik.
+
+
 /usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l 600
 
 !mona findmsp -distance 600
