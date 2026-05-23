@@ -148,6 +148,15 @@ List all scheduled tasks your user can see:
 In PowerShell:  
 `Get-ScheduledTask | where {$_.TaskPath -notlike "\Microsoft*"} | ft TaskName,TaskPath,State`
 
+#### whoami /priv
+
+SeImpersonatePrivilege - The Juicy Potato exploit abuses this ability.  
+SeAssignPrimaryPrivilege - similar to SeImpersonatePrivilege.  
+SeBackupPrivilege - read access to all objects on the system, regardless of their ACL.  
+SeRestorePrivilege - write access to all objects on the system, regardless of their ACL.  
+SeTakeOwnershipPrivilege - ets the user take ownership over an object (the WRITE_OWNER permission).  
+
+
 ### PrivescCheck
 ```cmd
 • get this script https://github.com/itm4n/PrivescCheck
