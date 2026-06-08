@@ -128,6 +128,8 @@
 
 `rapidscan` - 80 nov tarama edir ve aciqlar infolar verir
 
+`recon-ng` - powerfull OSINT framework
+
 `responder` - Ətrafa sorulan istəklərdə özünü soruşulan server kimi göstərərək qurbanın hash-larını (ntlm) oğurlayır. 
 
 `Rubeus` (Windows only) - A powerful Windows-based tool designed explicitly for Kerberos-related security testing and enumeration. Rubeus automatically identifies vulnerable accounts and retrieves encrypted AS-REP hashes  
