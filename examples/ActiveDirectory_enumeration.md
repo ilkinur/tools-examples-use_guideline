@@ -116,6 +116,31 @@ Parameters explained:
 `HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\DefaultSecurity\SrvsvcSessionInfo`  
 
 
+---
+
+### Windapsearch
+
+handy Python script we can use to enumerate users, groups, and
+computers from a Windows domain by utilizing LDAP queries  
+
+`python3 windapsearch.py --dc-ip 10.10.10.10 -u username -p password123 --da`  
+`-PU flag` - Privileged Users  
+
+
+---
+### Powershell Modules
+
+`Get-Module` - Show active modules  
+`Import-Module ActiveDirectory` - module loading.  
+`Get-ADDomain` - Get Domain Info  
+`Get-ADUser -Filter {ServicePrincipalName -ne "$null"} -Properties ServicePrincipalName` - Get-ADUser  
+`Get-ADTrust -Filter *` - Checking For Trust Relationships  
+`Get-ADGroup -Filter * | select name` - Group Enumeration  
+`Get-ADGroup -Identity "Backup Operators"` - Detailed Group Info  
+`Get-ADGroupMember -Identity "Backup Operators"` - Group Membership  
+
+
+
 
 
 
