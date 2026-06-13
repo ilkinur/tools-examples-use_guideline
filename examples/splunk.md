@@ -113,3 +113,23 @@ Məlumatı dəqiq bir sözlə deyil, müəyyən bir qaydaya və ya mətn şablon
 
 ---
 
+## 📋 1. `table` Komandası (Cədvəl Yaratmaq)
+
+Logların arasındakı qarışıqlığı təmizləyir və yalnız seçdiyiniz sahələri təmiz, oxunaqlı bir cədvəl halına salır. Xüsusilə hadisələrin baş vermə xronologiyasını (timeline) qurmaq üçün idealdır.
+
+* **Nümunə:** `index=windowslogs | table _time EventID Hostname SourceName`
+* **Mənası:** Tapılan loglardan yalnız vaxtı (`_time`), hadisə İD-sini (`EventID`), kompüter adını (`Hostname`) və mənbəyi (`SourceName`) götür və səliqəli cədvəl qur.
+
+---
+
+## 🛠️ 2. Faydalı Strukturlaşdırma Komandaları
+
+Cədvəl komandası ilə birlikdə və ya təkbaşına istifadə edə biləcəyiniz sürətli komandalar:
+
+| Komand | Nümunə | İzahı (Sadə dildə) |
+| :--- | :--- | :--- |
+| **`head`** | `... \| head 20` | Ən yeni (ən başda olan) **ilk 20 logu** gətirir. Axtarışı sürətləndirmək üçün əladır. |
+| **`tail`** | `... \| tail 20` | Ən köhnə (ən sonda olan) **son 20 logu** gətirir. |
+| **`sort`** | `... \| sort User` | Logları `User` (İstifadəçi) adına görə **əlifba sırası ilə** düzür. |
+| **`reverse`** | `... \| reverse` | Logların sıralamasını tam tərsinə çevirir (məsələn, köhnədən yeniyə doğru sıralayır). |
+
