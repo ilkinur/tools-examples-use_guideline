@@ -204,3 +204,44 @@ Splunk-ın ən güclü komandalarından biridir. Log daxilində riyazi hesablama
   index=windowslogs
   | eval LogonTypeDesc = case(LogonType == 3, "Network Logon", LogonType == 5, "Service")
   | stats count by LogonType LogonTypeDesc
+
+  # 🕵️‍♂️ Splunk SPL Anomaliyaların Tapılması Komandaları (Azərbaycan Dilində)
+
+Anomaliyaların (qeyri-adi hadisələrin) tapılması üçün istifadə edilən daha mürəkkəb Splunk komandalarının və funksiyalarının çox sadə dildə izahı:
+
+---
+
+### 🔄 `eventstats` (Statistika Hesablama və Logları Saxlama)
+Bu komanda eynilə `stats` komandası kimi işləyir — yəni sayır, orta qiymət tapır və ya cəmləyir. Lakin çox vacib bir fərqi var: `stats` komandası bütün logları silib ekranda yalnız bircə yekun cədvəl saxladığı halda, **`eventstats` orijinal logların heç birini silmir**. O, hesabladığı statistik rəqəmi mövcud logların yanına yeni bir sütun (sahə) olaraq yapışdırır.
+* **Nə üçün lazımdır?** Logların özünü silmədən, növbəti addımlarda həm xam məlumatlar, həm də hesablama nəticələri üzərində filtrləməyə davam etmək üçün əvəzedilməzdir.
+
+### 2. 🎯 `where` (Matematik və Şərtli Filtrləmə)
+Bu komanda ekrandakı nəticələri süzgəcdən keçirmək üçün istifadə olunur (eynilə `search` komandası kimi). Lakin `where` daha ağıllı və güclüdür. O, iki fərqli sütundakı dəyərləri bir-biri ilə müqayisə edə bilir və ya riyazi tənliklər qurmağa imkan verir (Məsələn: `A sahəsi > B sahəsi * 2`).
+* **Nə üçün lazımdır?** Hesablanmış xüsusi dəyərlərə (məsələn, anomaliya dərəcəsi 3-dən böyük olanlar: `where zscore > 3`) əsasən yalnız şübhəli logları seçib ayırmaq üçün istifadə olunur.
+
+---
+
+## 📊 Riyazi və Zaman Funksiyaları
+
+### 3. ⏱️ `strftime` (Vaxt Formatını Dəyişmək)
+Splunk-ın başa düşdüyü qarışıq zaman göstəricisini (`_time`) bizim oxuya biləcəyimiz formata salır.
+* **Nümunə:** `strftime(_time, "%H")` ➡️ Logun daxil olduqu vaxtdan yalnız **Saat** hissəsini (məsələn: 13 və ya 18) rəqəm olaraq qoparır.
+
+### 4. 🔢 `tonumber` (Mətni Rəqəmə Çevirmək)
+Sistemdə yazı (mətn) formatında olan rəqəmləri riyazi hesablamalar apara biləcəyimiz həqiqi rəqəm tipinə çevirir. (Məsələn, dırnaq içindəki `"12"` mətnini riyazi `12` rəqəmi edir).
+
+### 5. 📉 `stdev` (Standart Meyl - Standard Deviation)
+Məlumatların orta qiymətdən nə qədər uzaqlaşdığını (dəyişkənliyini) ölçən riyazi funksiyadır.
+* **Sadə İzahı:** Bir işçi hər gün dəqiq saat 09:00-da sistemə girirsə, onun standart meyli `0`-a yaxın olur (yəni davranışı sabitdir). Əgər gah gecə, gah günorta xaotik daxil olursa, bu rəqəm böyük olur.
+
+### 6. 🧮 `abs` (Modul / Mütləq Qiymət)
+Riyaziyyatdan bildiyimiz modul funksiyasıdır. Çıxma əməliyyatının nəticəsi mənfi (minus) alınsa belə, onu müsbətə (plus) çevirir. (Məsələn, `abs(-5)` bizə `5` cavabını verir).
+
+---
+
+## 🤖 Qabaqcıl Komandalar (Maşın Öyrənməsi)
+
+### 7. 🧠 `fit` və `apply` (Machine Learning)
+Splunk-ın süni intellekt və maşın öyrənməsi alətlədir. 
+* **`fit`** komandası keçmiş logları analiz edərək işçilərin "normal" davranış şablonunu öyrənir (modeli təlimatlandırır).
+* **`apply`** isə həmin öyrənilmiş şablonu yeni gələn loglara tətbiq edir və gələcəkdə baş verə biləcək qeyri-adi təhlükələri avtomatik tanıyır.
