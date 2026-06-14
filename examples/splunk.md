@@ -133,3 +133,74 @@ Cədvəl komandası ilə birlikdə və ya təkbaşına istifadə edə biləcəyi
 | **`sort`** | `... \| sort User` | Logları `User` (İstifadəçi) adına görə **əlifba sırası ilə** düzür. |
 | **`reverse`** | `... \| reverse` | Logların sıralamasını tam tərsinə çevirir (məsələn, köhnədən yeniyə doğru sıralayır). |
 
+---
+
+## 📊 1. Ümumi Transformasiya Komandaları
+
+Məlumatların içində ən çox və ya ən az təkrarlanan elementləri tapmaq üçün istifadə olunur.
+
+* **`top` (Ən çox təkrarlananlar):** Göstərilən sahədə ən çox keçən dəyərləri tapır.
+  * **Nümunə:** `index=windowslogs | top User limit=5`
+  * **Mənası:** Ən çox logu olan ilk 5 istifadəçini (User) və onların faiz göstəricisini gətirir. (Normalda ilk 10-u gətirir, `limit=5` ilə sayı məhdudlaşdırırıq).
+* **`rare` (Ən az təkrarlananlar):** `top` komandasının tam tərsinə, sistemdə ən nadir baş verən dəyərləri tapır (Anomaliyaları və şübhəli fəaliyyətləri tapmaq üçün əladır).
+  * **Nümunə:** `index=windowslogs | rare User limit=5`
+  * **Mənası:** Sistemdə ən az görünən, ən nadir 5 istifadəçini tapır.
+
+### 🖍️ `highlight` (Rəngləmə/İşıqlandırma)
+Mətn şəkilli logların (Raw data) içində axtardığınız sözlərin daha rahat gözə çarpması üçün onları rəngli markerlə qeyd edir.
+* **Nümunə:** `index=windowslogs | highlight User EventID Image "Process accessed"`
+* **Mənası:** Logların içindəki istifadəçi adlarını, EventID-ləri və "Process accessed" sözünü rəngli göstər.
+
+---
+
+## 📈 2. `stats` Komandası (Riyazi və Statistik Hesablamalar)
+
+Böyük həcmdə log məlumatlarından trendləri və fərqlilikləri tapmaq üçün riyazi hesablamalar aparır.
+
+| Funksiya | Nümunə | İzahı |
+| :--- | :--- | :--- |
+| **`avg`** (Orta Dəyər) | `| stats avg(ProcessCount)` | Seçilmiş sahənin orta qiymətini (riyazi ortasını) hesablayır. |
+| **`max`** (Maksimum) | `| stats max(Price)` | Sahədəki ən böyük (maksimum) dəyəri tapır. |
+| **`min`** (Minimum) | `| stats min(UserAge)` | Sahədəki ən kiçik (minimum) dəyəri tapır. |
+| **`sum`** (Cəm) | `| stats sum(Cost)` | Həmin sütundakı bütün rəqəmləri toplayır. |
+| **`count`** (Say) | `| stats count by SourceIp` | Hansı İP-dən neçə dəfə log gəldiyini (təkrarlanma sayını) tapır. |
+
+* **Praktiki Nümunə:** `index=windowslogs | stats count by EventID | sort EventID`
+* **Mənası:** Hər bir EventID-nin sistemdə neçə dəfə baş verdiyini say və EventID sırasına görə düz.
+
+---
+
+## 📉 3. Qrafiklər Yaratmaq (`chart` və `timechart`)
+
+Bu komandalar nəticələri elə bir cədvəl formasına salır ki, Splunk panellərində asanlıqla qrafiklər (diaqramlar) vizuallaşdırmaq mümkün olsun.
+
+* **`chart` (Ümumi Qrafik):** Müəyyən sahələrə görə qrafik hazırlayır.
+  * **Nümunə:** `index=windowslogs | chart count by User`
+  * **Mənası:** Hansı istifadəçinin nə qədər fəaliyyəti olduğunu göstərən cədvəl qur (bunu sütunlu diaqrama çevirmək olar).
+* **`timechart` (Zamana Görə Qrafik):** Məlumatların zaman daxilində necə dəyişdiyini (azaldığını və ya çoxaldığını) göstərir. Trendləri və qəfil sıçrayışları görmək üçün idealdır.
+  * **Nümunə:** `index=windowslogs Image!="" | timechart span=30m count by Image limit=5`
+  * **Mənası:** Boş olmayan proqram loglarını götür, hər **30 dəqiqəlik (span=30m)** intervalla ən çox işləyən ilk 5 proqramın zamana görə dəyişmə qrafikini qur.
+
+---
+
+## 🧬 4. Məlumatların Zənginləşdirilməsi və Manipulyasiyası
+
+Əlinizdəki mövcud loglara yeni məlumatlar əlavə etmək və ya onları daha oxunaqlı formaya salmaq üçün istifadə olunur.
+
+### 🗺️ `iplocation` (İP-yə görə Coğrafi Məkan Tapmaq)
+Logdakı İP ünvanının hansı ölkəyə və ya şəhərə aid olduğunu Splunk-ın daxili bazasından tapıb loga əlavə edir.
+* **Nümunə:** `index=windowslogs | iplocation SourceIp | stats count by Country`
+* **Mənası:** `SourceIp` sahəsindəki İP-lərin hansı ölkələrə məxsus olduğunu tap və hansı ölkədən neçə log gəldiyini say.
+
+### 📁 `lookup` (Xarici Fayldan Məlumat Çəkmək)
+Əlinizdə olan bir CSV faylı ilə logları birləşdirir. Məsələn, logda yalnız `Hostname` var, amma siz həmin kompüterin hansı şöbəyə aid olduğunu bilmək istəyirsinizsə, lookup istifadə edirsiniz.
+* **Nümunə:** `index=windowslogs | lookup user_roles Hostname OUTPUT UserRole | stats count by Hostname UserRole`
+* **Mənası:** `user_roles` adlı hazır siyahıya bax, logdakı `Hostname` ilə siyahıdakı adı uyğunlaşdır və oradan işçinin rolunu (`UserRole`) götürüb logun yanına yapışdır.
+
+### 🧮 `eval` (Yeni Sahə Yaratmaq və ya Dəyişmək)
+Splunk-ın ən güclü komandalarından biridir. Log daxilində riyazi hesablamalar aparmağa, şərtlər qoymağa və ya anlaşılmayan rəqəmləri mətnə çevirməyə imkan verir.
+
+* **Nümunə:** ```splunk
+  index=windowslogs
+  | eval LogonTypeDesc = case(LogonType == 3, "Network Logon", LogonType == 5, "Service")
+  | stats count by LogonType LogonTypeDesc
