@@ -3,7 +3,7 @@
 
 ---
 
-## 🔍 1. Sərbəst Mətn Axtarışı (Free Text Search)
+## 🔍 Sərbəst Mətn Axtarışı (Free Text Search)
 Əgər xüsusi bir sahənin (field) adını bilmirsinizsə və ya tez-tez axtarış etmək istəyirsinizsə, birbaşa açar sözü yaza bilərsiniz. Böyük/kiçik hərf fərqi yoxdur (case-insensitive).
 
 * **Nümunə:** `index=windowslogs alice`
@@ -11,7 +11,7 @@
 
 ---
 
-## 📊 2. Müqayisə Operatorları (Relational Operators)
+## 📊 Müqayisə Operatorları (Relational Operators)
 Sahələrin (fields) içindəki dəyərləri müqayisə etmək üçün istifadə olunur.
 
 | Operator | Mənası | Nümunə | İzahı |
@@ -25,7 +25,7 @@ Sahələrin (fields) içindəki dəyərləri müqayisə etmək üçün istifadə
 
 ---
 
-## 🧠 3. Məntiqi Operatorlar (Logical Operators)
+## 🧠 Məntiqi Operatorlar (Logical Operators)
 Birdən çox şərti bir-birinə bağlamaq üçün istifadə olunur. Splunk-da operatorları **BÖYÜK HƏRFLƏRLƏ** (`AND`, `OR`, `NOT`, `IN`) yazmaq şərtdir.
 
 * **`NOT`**: Müəyyən bir şərtin olmamasını tələb edir.
@@ -42,7 +42,7 @@ Birdən çox şərti bir-birinə bağlamaq üçün istifadə olunur. Splunk-da o
 
 ---
 
-## 🌟 4. Ulduz (`*`) və İP Axtarışı (Wildcards & CIDR)
+## 🌟 Ulduz (`*`) və İP Axtarışı (Wildcards & CIDR)
 Sözün və ya İP ünvanının bir hissəsini axtarmaq üçün istifadə olunur.
 
 * **Sözün hissəsi üçün (`*`):** * `status=*fail*` ➡️ İçində "fail" sözü keçən hər şeyi tapır: *failed, failure, appfail*.
@@ -51,7 +51,7 @@ Sözün və ya İP ünvanının bir hissəsini axtarmaq üçün istifadə olunur
 
 ---
 
-## 🔀 5. Dırnaq işarəsi və Mötərizələrin Gücü (Order of Evaluation)
+## 🔀 Dırnaq işarəsi və Mötərizələrin Gücü (Order of Evaluation)
 
 ### 💬 Dırnaq İşarəsi (`""`)
 Mətni bütöv bir ifadə kimi axtarmaq və ya Splunk operatorlarını düzgün oxutmaq üçün istifadə olunur.
@@ -79,7 +79,7 @@ Splunk-da komandalar bir-birinə `|` (pipe) işarəsi ilə bağlanır. Bu işar�
 
 ## 🛠️ Ən Çox İstifadə Olunan Filtrləmə Komandaları
 
-### 1. 📋 `fields` (Sahələri Seçmək / Gizlətmək)
+### 📋 `fields` (Sahələri Seçmək / Gizlətmək)
 Loglarda yüzlərlə fərqli məlumat sütunu (sahə) ola bilər. `fields` komandası ekranı təmizləmək və yalnız sizə lazım olan sütunları görmək üçün istifadə olunur.
 
 * **Yalnız müəyyən sahələri göstərmək üçün:**
@@ -89,13 +89,13 @@ Loglarda yüzlərlə fərqli məlumat sütunu (sahə) ola bilər. `fields` koman
   * `index=windowslogs | fields - Password`
   * *Mənası:* `Password` sütunundan başqa bütün sahələri göstər (mənfi işarəsi həmin sahəni nəticədən çıxarır).
 
-### 2. 🧽 `dedup` (Təkrarları Silmək)
+### 🧽 `dedup` (Təkrarları Silmək)
 Eyni olan təkrarlanan məlumatları təmizləyir. Əgər eyni fəaliyyət üçün sistem ardıcıl olaraq onlarla eyni logu göndəribsə, `dedup` hər dəyərdən yalnız 1 unikal nümunə saxlayır.
 
 * **Nümunə:** `index=windowslogs | fields EventID User Image Hostname SourceIp | dedup SourceIp`
 * **Mənası:** Eyni İP ünvanından gələn təkrarlanan logları sil və hər İP-dən yalnız bir fərqli hadisə göstər.
 
-### 3. 🏷️ `rename` (Adı Dəyişmək)
+### 🏷️ `rename` (Adı Dəyişmək)
 Loglardakı sahə adlarını daha anlaşıqlı formaya salmaq üçün istifadə olunur. Bu, xüsusilə SOC hesabatları hazırlayarkən skrinşotların daha oxunaqlı və peşəkar görünməsinə kömək edir.
 
 * **Sahə adını dəyişmək:**
@@ -105,7 +105,7 @@ Loglardakı sahə adlarını daha anlaşıqlı formaya salmaq üçün istifadə 
   * `index=jsondata | rename request.* as *`
   * *Mənası:* JSON daxilindəki `request.path` və `request.ip` kimi uzun adların önündəki `request.` hissəsini sil və birbaşa `path` və `ip` elə ki, hər dəfə uzun yazmayasan.
 
-### 4. 🎯 `regex` (Mətn Şablonu ilə Axtarış)
+### 🎯 `regex` (Mətn Şablonu ilə Axtarış)
 Məlumatı dəqiq bir sözlə deyil, müəyyən bir qaydaya və ya mətn şablonuna (PCRE - Regular Expressions) uyğun axtarmaq üçün istifadə olunur.
 
 * **Nümunə:** `index=windowslogs | regex Image = "\.exe$"`
@@ -113,7 +113,7 @@ Məlumatı dəqiq bir sözlə deyil, müəyyən bir qaydaya və ya mətn şablon
 
 ---
 
-## 📋 1. `table` Komandası (Cədvəl Yaratmaq)
+## 📋 `table` Komandası (Cədvəl Yaratmaq)
 
 Logların arasındakı qarışıqlığı təmizləyir və yalnız seçdiyiniz sahələri təmiz, oxunaqlı bir cədvəl halına salır. Xüsusilə hadisələrin baş vermə xronologiyasını (timeline) qurmaq üçün idealdır.
 
@@ -122,7 +122,7 @@ Logların arasındakı qarışıqlığı təmizləyir və yalnız seçdiyiniz sa
 
 ---
 
-## 🛠️ 2. Faydalı Strukturlaşdırma Komandaları
+## 🛠️ Faydalı Strukturlaşdırma Komandaları
 
 Cədvəl komandası ilə birlikdə və ya təkbaşına istifadə edə biləcəyiniz sürətli komandalar:
 
@@ -135,7 +135,7 @@ Cədvəl komandası ilə birlikdə və ya təkbaşına istifadə edə biləcəyi
 
 ---
 
-## 📊 1. Ümumi Transformasiya Komandaları
+## 📊 Ümumi Transformasiya Komandaları
 
 Məlumatların içində ən çox və ya ən az təkrarlanan elementləri tapmaq üçün istifadə olunur.
 
@@ -153,7 +153,7 @@ Mətn şəkilli logların (Raw data) içində axtardığınız sözlərin daha r
 
 ---
 
-## 📈 2. `stats` Komandası (Riyazi və Statistik Hesablamalar)
+## 📈 `stats` Komandası (Riyazi və Statistik Hesablamalar)
 
 Böyük həcmdə log məlumatlarından trendləri və fərqlilikləri tapmaq üçün riyazi hesablamalar aparır.
 
@@ -170,7 +170,7 @@ Böyük həcmdə log məlumatlarından trendləri və fərqlilikləri tapmaq ü�
 
 ---
 
-## 📉 3. Qrafiklər Yaratmaq (`chart` və `timechart`)
+## 📉 Qrafiklər Yaratmaq (`chart` və `timechart`)
 
 Bu komandalar nəticələri elə bir cədvəl formasına salır ki, Splunk panellərində asanlıqla qrafiklər (diaqramlar) vizuallaşdırmaq mümkün olsun.
 
@@ -183,7 +183,7 @@ Bu komandalar nəticələri elə bir cədvəl formasına salır ki, Splunk panel
 
 ---
 
-## 🧬 4. Məlumatların Zənginləşdirilməsi və Manipulyasiyası
+## 🧬 Məlumatların Zənginləşdirilməsi və Manipulyasiyası
 
 Əlinizdəki mövcud loglara yeni məlumatlar əlavə etmək və ya onları daha oxunaqlı formaya salmaq üçün istifadə olunur.
 
@@ -215,7 +215,7 @@ Anomaliyaların (qeyri-adi hadisələrin) tapılması üçün istifadə edilən 
 Bu komanda eynilə `stats` komandası kimi işləyir — yəni sayır, orta qiymət tapır və ya cəmləyir. Lakin çox vacib bir fərqi var: `stats` komandası bütün logları silib ekranda yalnız bircə yekun cədvəl saxladığı halda, **`eventstats` orijinal logların heç birini silmir**. O, hesabladığı statistik rəqəmi mövcud logların yanına yeni bir sütun (sahə) olaraq yapışdırır.
 * **Nə üçün lazımdır?** Logların özünü silmədən, növbəti addımlarda həm xam məlumatlar, həm də hesablama nəticələri üzərində filtrləməyə davam etmək üçün əvəzedilməzdir.
 
-### 2. 🎯 `where` (Matematik və Şərtli Filtrləmə)
+### 🎯 `where` (Matematik və Şərtli Filtrləmə)
 Bu komanda ekrandakı nəticələri süzgəcdən keçirmək üçün istifadə olunur (eynilə `search` komandası kimi). Lakin `where` daha ağıllı və güclüdür. O, iki fərqli sütundakı dəyərləri bir-biri ilə müqayisə edə bilir və ya riyazi tənliklər qurmağa imkan verir (Məsələn: `A sahəsi > B sahəsi * 2`).
 * **Nə üçün lazımdır?** Hesablanmış xüsusi dəyərlərə (məsələn, anomaliya dərəcəsi 3-dən böyük olanlar: `where zscore > 3`) əsasən yalnız şübhəli logları seçib ayırmaq üçün istifadə olunur.
 
@@ -223,25 +223,25 @@ Bu komanda ekrandakı nəticələri süzgəcdən keçirmək üçün istifadə ol
 
 ## 📊 Riyazi və Zaman Funksiyaları
 
-### 3. ⏱️ `strftime` (Vaxt Formatını Dəyişmək)
+### ⏱️ `strftime` (Vaxt Formatını Dəyişmək)
 Splunk-ın başa düşdüyü qarışıq zaman göstəricisini (`_time`) bizim oxuya biləcəyimiz formata salır.
 * **Nümunə:** `strftime(_time, "%H")` ➡️ Logun daxil olduqu vaxtdan yalnız **Saat** hissəsini (məsələn: 13 və ya 18) rəqəm olaraq qoparır.
 
-### 4. 🔢 `tonumber` (Mətni Rəqəmə Çevirmək)
+### 🔢 `tonumber` (Mətni Rəqəmə Çevirmək)
 Sistemdə yazı (mətn) formatında olan rəqəmləri riyazi hesablamalar apara biləcəyimiz həqiqi rəqəm tipinə çevirir. (Məsələn, dırnaq içindəki `"12"` mətnini riyazi `12` rəqəmi edir).
 
-### 5. 📉 `stdev` (Standart Meyl - Standard Deviation)
+### 📉 `stdev` (Standart Meyl - Standard Deviation)
 Məlumatların orta qiymətdən nə qədər uzaqlaşdığını (dəyişkənliyini) ölçən riyazi funksiyadır.
 * **Sadə İzahı:** Bir işçi hər gün dəqiq saat 09:00-da sistemə girirsə, onun standart meyli `0`-a yaxın olur (yəni davranışı sabitdir). Əgər gah gecə, gah günorta xaotik daxil olursa, bu rəqəm böyük olur.
 
-### 6. 🧮 `abs` (Modul / Mütləq Qiymət)
+### 🧮 `abs` (Modul / Mütləq Qiymət)
 Riyaziyyatdan bildiyimiz modul funksiyasıdır. Çıxma əməliyyatının nəticəsi mənfi (minus) alınsa belə, onu müsbətə (plus) çevirir. (Məsələn, `abs(-5)` bizə `5` cavabını verir).
 
 ---
 
 ## 🤖 Qabaqcıl Komandalar (Maşın Öyrənməsi)
 
-### 7. 🧠 `fit` və `apply` (Machine Learning)
+### 🧠 `fit` və `apply` (Machine Learning)
 Splunk-ın süni intellekt və maşın öyrənməsi alətlədir. 
 * **`fit`** komandası keçmiş logları analiz edərək işçilərin "normal" davranış şablonunu öyrənir (modeli təlimatlandırır).
 * **`apply`** isə həmin öyrənilmiş şablonu yeni gələn loglara tətbiq edir və gələcəkdə baş verə biləcək qeyri-adi təhlükələri avtomatik tanıyır.
