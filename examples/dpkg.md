@@ -21,6 +21,11 @@
 | **`-x`** / `--extract` | `dpkg -x <file.deb> <dir>` | Oflayn Analiz | `.deb` paketini sistemə quraşdırmadan, daxilindəki faylları göstərilən hədəf qovluğuna çıxarır (sistem kökünə müdaxilə etmir). |
 | **`-e`** / `--control` | `dpkg -e <file.deb> [dir]` | Oflayn Analiz | `.deb` paketi daxilindəki skriptləri (`preinst`, `postinst`, `prerm`, `postrm`) və `control` faylını çıxarır. |
 | **`-C`** / `--audit` | `dpkg -C` | Troubleshooting | Sistemdə yarıda qalmış, səhv yüklənmiş və ya konfiqurasiya gözləyən zədəli paketləri axtarır. |
+| **`--print-architecture`** | `dpkg --print-architecture` | Soruşma | Host arxitekturasını gətirir. |
+| **`--add-architecture`** | `dpkg --add-architecture <i386>` | Əlavə etmə | Bu əmr vasitəsilə sisteminizə cari əməliyyat sisteminin arxitekturasından fərqli olan proqram paketlərinin yüklənməsinə icazə verilir [64-bit (amd64) Linux sisteminə 32-bit (i386)]. |
+| **`--remove-architecture`** | `dpkg --remove-architecture <i386>` | Silmə | Əlavə edilmiş arxitekturanı silir. |
+| **`--print-foreign-architectures`** | `dpkg --print-foreign-architecture` | Soruşma | Hosta əlavə hansə kənar arxitektura yüklənibsə gətirir. |
+| **`--unpack`** | `dpkg --unpack <paket_adı.deb>` | Half Install | Paketin sistemə tam quraşdırmadan yalnız faylları arxivdən çıxarır və aidiyyəti qovluqlara yerləşdirir (`--configure` ilə `--install` mərhələsini tamamlamaq olar). |
 | **`--configure`** | `dpkg --configure -a` | Məcburi Konfiqurasiya | Yarıda qalmış quraşdırmaları və ya dependency həllindən sonra konfiqurasiya olunmamış paketləri tam işlək vəziyyətə gətirir. |
 | **`--get-selections`**| `dpkg --get-selections` | Backup/Miqrasiya | Sistemdəki bütün paketlərin və onların statuslarının (install, hold, purge) siyahısını mətn formatında çıxarır. |
 | **`--set-selections`**| `dpkg --set-selections` | Backup/Miqrasiya | Mətn faylından paket siyahısını oxuyub, quraşdırma statuslarını işarələyir (`apt-get dselect-upgrade` ilə tamamlanır). |
