@@ -10,6 +10,7 @@
 | 506 | Entering Connected Standby (Kernel-Power) |
 | 507 | Exiting Connected Standby (Kernel-Power) |
 | 1074 | User Initiated Shutdown / Restart |
+| 1100 | The event logging service has shut down |
 | 1102 | The audit log was cleared |
 | 4103 | Module Logging |
 | 4104 | Script Block Logging |
