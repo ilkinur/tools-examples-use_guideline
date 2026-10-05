@@ -13,6 +13,7 @@
 | 1102 | The audit log was cleared |
 | 4103 | Module Logging |
 | 4104 | Script Block Logging |
+| 4616 | The system time was changed |
 | 4624 | Present Service Ticket (Kerberos Authentication) |
 | 4624 | Session created (NTLM Authentication) |
 | 4625 | Failed logon |
